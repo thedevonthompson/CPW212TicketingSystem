@@ -8,16 +8,10 @@ using System.Threading.Tasks;
 
 namespace CPW212TicketingSystem
 {
-    class Comment
+    public class Comment
     {
         [Key]
         public int CommentID { get; set; }
-
-        [ForeignKey("User")]
-        public int UserID { get; set; }
-
-        [ForeignKey("Ticket")]
-        public int TicketID { get; set; }
 
         [Required]
         [MaxLength(280)]
@@ -29,6 +23,16 @@ namespace CPW212TicketingSystem
         public DateTime Created { get; set; }
 
         public DateTime? LastEdited { get; set; }
+
+        /// <summary>
+        /// The user that posted the comment.
+        /// </summary>
+        public virtual User User { get; set; }
+
+        /// <summary>
+        /// The ticket the comment was posted to.
+        /// </summary>
+        public virtual Ticket Ticket { get; set; }
 
     }
 }

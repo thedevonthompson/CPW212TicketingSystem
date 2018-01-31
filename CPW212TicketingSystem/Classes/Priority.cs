@@ -7,12 +7,13 @@ using System.Threading.Tasks;
 
 namespace CPW212TicketingSystem
 {
-    class Priority
+    public class Priority
     {
         [Key]
         public int PriorityID { get; set; }
 
         [Required]
+        [StringLength(80)]
         public string Name { get; set; }
     }
 }

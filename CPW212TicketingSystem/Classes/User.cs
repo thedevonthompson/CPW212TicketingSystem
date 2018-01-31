@@ -8,29 +8,32 @@ using System.Threading.Tasks;
 
 namespace CPW212TicketingSystem
 {
-    class User
+    public class User
     {
         [Key]
         public int UserID { get; set; }
 
         [Required]
+        [StringLength(40)]
         public string Username { get; set; }
 
         [Required]
+        [StringLength(128)]
         public string Password { get; set; }
 
         [Required]
+        [StringLength(40)]
         public string FirstName { get; set; }
 
         [Required]
+        [StringLength(40)]
         public string LastName { get; set; }
 
         /// <summary>
-        /// An array of all the tickets assigned to a user.
+        /// All of the tickets assigned to a user.
         /// </summary>
-        public List<Ticket> AssignedTickets { get; set; }
+        public virtual ICollection<Ticket> AssignedTickets { get; set; }
 
-        [ForeignKey("Role")]
-        public int RoleID { get; set; }
+        public virtual Role Role { get; set; }
     }
 }

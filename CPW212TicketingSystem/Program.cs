@@ -17,7 +17,7 @@ namespace CPW212TicketingSystem
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             // Run login form
-            Application.Run(new Form1());
+            Application.Run(new FrmLogin());
             // If login form success, run main form.
             // if (success)
             // Application.Run(new Main());

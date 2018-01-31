@@ -7,15 +7,19 @@ using System.Threading.Tasks;
 
 namespace CPW212TicketingSystem
 {
-    class Role
+    public class Role
     {
         [Key]
         public int RoleID { get; set; }
 
+        /// <summary>
+        /// A number representing the hierarchical order of roles.
+        /// </summary>
         [Required]
         public byte RoleLevel { get; set; }
 
         [Required]
+        [StringLength(80)]
         public string Name { get; set; }
 
         public bool IsTechnician { get; set; }
