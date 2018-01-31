@@ -14,6 +14,7 @@ namespace CPW212TicketingSystem
         public int UserID { get; set; }
 
         [Required]
+        [Index(IsUnique = true)]
         [StringLength(40)]
         public string Username { get; set; }
 

@@ -12,6 +12,12 @@ namespace CPW212TicketingSystem
         [Key]
         public int PriorityID { get; set; }
 
+        /// <summary>
+        /// A number representing the hierarchical order of priority.
+        /// </summary>
+        [Required]
+        public byte PriorityLevel { get; set; }
+
         [Required]
         [StringLength(80)]
         public string Name { get; set; }

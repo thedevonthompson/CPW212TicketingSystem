@@ -65,6 +65,10 @@
     <Compile Include="Migrations\201801312012253_Initial.Designer.cs">
       <DependentUpon>201801312012253_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801312213209_PriorityLevel.cs" />
+    <Compile Include="Migrations\201801312213209_PriorityLevel.Designer.cs">
+      <DependentUpon>201801312213209_PriorityLevel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Classes\Priority.cs" />
     <Compile Include="Program.cs" />
@@ -78,6 +82,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801312012253_Initial.resx">
       <DependentUpon>201801312012253_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801312213209_PriorityLevel.resx">
+      <DependentUpon>201801312213209_PriorityLevel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
