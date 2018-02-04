@@ -27,7 +27,7 @@ namespace CPW212TicketingSystem.DatabaseClasses
 
             return userLoginCheck;
         }
-
+        // takes in a user object/context object which points to
         public static void RegisterUser(User regUser)
         {
             var db = new TicketingSystemDBContext();

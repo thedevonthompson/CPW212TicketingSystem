@@ -50,6 +50,8 @@ namespace CPW212TicketingSystem
             // TODO: create a query to input a new user into the database.
             // everyone will have to default at the lowest level. and then at a certain level
             // another user at a higher tier level can then promote that person up the ranks.
+            FrmRegistration registerForm = new FrmRegistration();
+            registerForm.Show();
         }
     }
 }
