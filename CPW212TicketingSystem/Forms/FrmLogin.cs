@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CPW212TicketingSystem.DatabaseClasses;
 using CPW212TicketingSystem.Forms;
 
 namespace CPW212TicketingSystem
@@ -35,9 +34,11 @@ namespace CPW212TicketingSystem
                 // as login is still running in the back ground. 
                 // TODO: Either create a method to be called once main form is exited to exit login ( which would be the messier way imo)
                 // TODO: Second option would be to research a way to do it more cleanly maybe have Application.Run point somewhere else??
-                this.Hide();
-                FrmMain mainForm = new FrmMain();
-                mainForm.Show();
+
+
+                State.CurrUser = userToLogin;
+                MessageBox.Show("Success");
+                this.DialogResult = DialogResult.OK;
             }
             else
             {
@@ -45,13 +46,9 @@ namespace CPW212TicketingSystem
             }
         }
 
-        private void btnRegister_Click(object sender, EventArgs e)
+        private void FrmLogin_Load(object sender, EventArgs e)
         {
-            // TODO: create a query to input a new user into the database.
-            // everyone will have to default at the lowest level. and then at a certain level
-            // another user at a higher tier level can then promote that person up the ranks.
-            FrmRegistration registerForm = new FrmRegistration();
-            registerForm.Show();
+
         }
     }
 }

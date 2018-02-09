@@ -12,9 +12,18 @@ namespace CPW212TicketingSystem.Forms
 {
     public partial class FrmMain : Form
     {
+
+        public User CurrUser { get; set; }
+
         public FrmMain()
         {
             InitializeComponent();
+        }
+
+        private void FrmMain_Load(object sender, EventArgs e)
+        {
+
+            MessageBox.Show(State.CurrUser.FirstName);
         }
     }
 }

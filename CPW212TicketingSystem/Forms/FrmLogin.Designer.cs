@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.btnLogin = new System.Windows.Forms.Button();
-            this.btnToRegisterFrm = new System.Windows.Forms.Button();
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.txtPassWord = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -46,16 +45,6 @@
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
-            // btnToRegisterFrm
-            // 
-            this.btnToRegisterFrm.Location = new System.Drawing.Point(197, 227);
-            this.btnToRegisterFrm.Name = "btnToRegisterFrm";
-            this.btnToRegisterFrm.Size = new System.Drawing.Size(75, 23);
-            this.btnToRegisterFrm.TabIndex = 1;
-            this.btnToRegisterFrm.Text = "Register";
-            this.btnToRegisterFrm.UseVisualStyleBackColor = true;
-            this.btnToRegisterFrm.Click += new System.EventHandler(this.btnRegister_Click);
-            // 
             // txtUserName
             // 
             this.txtUserName.Location = new System.Drawing.Point(88, 12);
@@ -69,6 +58,7 @@
             this.txtPassWord.Name = "txtPassWord";
             this.txtPassWord.Size = new System.Drawing.Size(100, 20);
             this.txtPassWord.TabIndex = 3;
+            this.txtPassWord.UseSystemPasswordChar = true;
             // 
             // label1
             // 
@@ -97,10 +87,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPassWord);
             this.Controls.Add(this.txtUserName);
-            this.Controls.Add(this.btnToRegisterFrm);
             this.Controls.Add(this.btnLogin);
             this.Name = "FrmLogin";
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.FrmLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -109,7 +99,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.Button btnToRegisterFrm;
         private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.TextBox txtPassWord;
         private System.Windows.Forms.Label label1;
