@@ -77,6 +77,7 @@
     <Compile Include="Classes\Ticket.cs" />
     <Compile Include="TicketingSystemDBContext.cs" />
     <Compile Include="Classes\User.cs" />
+    <Compile Include="UserDB.cs" />
     <EmbeddedResource Include="Forms\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
