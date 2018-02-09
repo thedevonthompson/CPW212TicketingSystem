@@ -61,10 +61,10 @@
     <Compile Include="Forms\FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmRegistration.cs">
+    <Compile Include="Forms\FrmRegistration.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmRegistration.Designer.cs">
+    <Compile Include="Forms\FrmRegistration.Designer.cs">
       <DependentUpon>FrmRegistration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201801312012253_Initial.cs" />
@@ -83,9 +83,12 @@
     <Compile Include="Classes\Ticket.cs" />
     <Compile Include="TicketingSystemDBContext.cs" />
     <Compile Include="Classes\User.cs" />
-    <Compile Include="UserDB.cs" />
+    <Compile Include="Classes\UserDB.cs" />
     <EmbeddedResource Include="Forms\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmRegistration.resx">
+      <DependentUpon>FrmRegistration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801312012253_Initial.resx">
       <DependentUpon>201801312012253_Initial.cs</DependentUpon>
