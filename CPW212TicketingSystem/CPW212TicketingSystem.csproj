@@ -61,6 +61,12 @@
     <Compile Include="Forms\FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmUserMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUserMain.Designer.cs">
+      <DependentUpon>FrmUserMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\201801312012253_Initial.cs" />
     <Compile Include="Migrations\201801312012253_Initial.Designer.cs">
       <DependentUpon>201801312012253_Initial.cs</DependentUpon>
@@ -80,6 +86,9 @@
     <Compile Include="UserDB.cs" />
     <EmbeddedResource Include="Forms\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUserMain.resx">
+      <DependentUpon>FrmUserMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801312012253_Initial.resx">
       <DependentUpon>201801312012253_Initial.cs</DependentUpon>
