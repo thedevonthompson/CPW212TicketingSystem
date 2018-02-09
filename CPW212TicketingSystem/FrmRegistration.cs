@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CPW212TicketingSystem
 {
-    public partial class FrmUserMain : Form
+    public partial class FrmRegistration : Form
     {
-        public FrmUserMain()
+        public FrmRegistration()
         {
             InitializeComponent();
         }
