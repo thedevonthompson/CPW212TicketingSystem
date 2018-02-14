@@ -13,8 +13,6 @@ namespace CPW212TicketingSystem.Forms
     public partial class FrmMain : Form
     {
 
-        public User CurrUser { get; set; }
-
         public FrmMain()
         {
             InitializeComponent();

@@ -18,14 +18,14 @@ namespace CPW212TicketingSystem
         /// </summary>
         [Required]
         [Index(IsUnique = true)] // TODO: Add migration to make PriorityLevel unique in the database. Also, change name to Level for consistency.
-        public byte PriorityLevel { get; set; }
+        public byte Level { get; set; }
 
         [Required]
         [StringLength(80)]
         public string Name { get; set; }
 
         public Priority(Priority p)
-        : this(p.PriorityID, p.PriorityLevel, p.Name) {}
+        : this(p.PriorityID, p.Level, p.Name) {}
 
         /// <summary>
         /// This contructor should be used when creating a priority that's not in the database yet.
@@ -39,7 +39,7 @@ namespace CPW212TicketingSystem
         public Priority(int? id, byte level, string name)
         {
             PriorityID = id;
-            PriorityLevel = level;
+            Level = level;
             Name = name;
         }
 
@@ -59,7 +59,7 @@ namespace CPW212TicketingSystem
         /// <returns></returns>
         public int CompareTo(Priority other)
         {
-            return PriorityLevel.CompareTo(other.PriorityLevel);
+            return Level.CompareTo(other.Level);
         }
     }
 }

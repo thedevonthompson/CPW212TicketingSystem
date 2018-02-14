@@ -46,7 +46,7 @@ namespace CPW212TicketingSystem
             TxtTicketCreator.Text = Ticket.User.ToString();
             TxtTitle.Text = Ticket.Title;
             DtpCreated.Value = Ticket.Created;
-            CboPriority.SelectedItem = Ticket.Priority.PriorityLevel;
+            CboPriority.SelectedItem = Ticket.Priority.Level;
             CbxCompleted.Checked = Ticket.IsCompleted;
             DtpLastUpdated.Value = Ticket.LastUpdated;
 

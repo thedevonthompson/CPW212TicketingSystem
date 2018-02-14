@@ -23,7 +23,6 @@ namespace CPW212TicketingSystem
         [Required]
         public DateTime Created { get; set; }
 
-        // Should be required now, default value should be the date of creation - TODO: Create migration.
         public DateTime LastUpdated { get; set; }
 
         public DateTime? DueDate { get; set; }

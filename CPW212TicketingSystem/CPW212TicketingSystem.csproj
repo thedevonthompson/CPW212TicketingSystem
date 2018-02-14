@@ -58,7 +58,6 @@
     <Compile Include="Classes\State.cs" />
     <Compile Include="DatabaseClasses\PriorityDB.cs" />
     <Compile Include="DatabaseClasses\TicketDB.cs" />
-    <Compile Include="DatabaseClasses\UserDB.cs" />
     <Compile Include="Forms\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +90,10 @@
     <Compile Include="Migrations\201801312213209_PriorityLevel.Designer.cs">
       <DependentUpon>201801312213209_PriorityLevel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802142046248_RolePriorityLevelUnique.cs" />
+    <Compile Include="Migrations\201802142046248_RolePriorityLevelUnique.Designer.cs">
+      <DependentUpon>201802142046248_RolePriorityLevelUnique.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Classes\Priority.cs" />
     <Compile Include="Program.cs" />
@@ -99,7 +102,7 @@
     <Compile Include="Classes\Ticket.cs" />
     <Compile Include="TicketingSystemDBContext.cs" />
     <Compile Include="Classes\User.cs" />
-    <Compile Include="Classes\UserDB.cs" />
+    <Compile Include="DatabaseClasses\UserDB.cs" />
     <EmbeddedResource Include="Forms\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -117,6 +120,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801312213209_PriorityLevel.resx">
       <DependentUpon>201801312213209_PriorityLevel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802142046248_RolePriorityLevelUnique.resx">
+      <DependentUpon>201802142046248_RolePriorityLevelUnique.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,7 +17,8 @@ namespace CPW212TicketingSystem
         /// A number representing the hierarchical order of roles.
         /// </summary>
         [Required]
-        public byte RoleLevel { get; set; }
+        [Index(IsUnique = true)]
+        public byte Level { get; set; }
 
         [Required]
         [StringLength(80)]
