@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CPW212TicketingSystem.Forms;
 
 namespace CPW212TicketingSystem
 {
@@ -17,10 +18,17 @@ namespace CPW212TicketingSystem
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             // Run login form
-            Application.Run(new FrmLogin());
-            // If login form success, run main form.
-            // if (success)
-            // Application.Run(new Main());
+            FrmLogin login = new FrmLogin();
+            // check to see iff credentials match if so run the main form, if the user Closes out before logging in it will end the program
+            if (login.ShowDialog() == DialogResult.OK)
+            {
+                Application.Run(new FrmMain());
+            }
+            else
+            {
+                Application.Exit();
+            }
+
         }
     }
 }

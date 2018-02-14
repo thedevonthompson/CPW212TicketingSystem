@@ -55,6 +55,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Comment.cs" />
+    <Compile Include="Classes\State.cs" />
+    <Compile Include="DatabaseClasses\UserDB.cs" />
     <Compile Include="Forms\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +68,12 @@
     </Compile>
     <Compile Include="Forms\FrmRegistration.Designer.cs">
       <DependentUpon>FrmRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201801312012253_Initial.cs" />
     <Compile Include="Migrations\201801312012253_Initial.Designer.cs">
@@ -89,6 +97,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmRegistration.resx">
       <DependentUpon>FrmRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801312012253_Initial.resx">
       <DependentUpon>201801312012253_Initial.cs</DependentUpon>
@@ -119,8 +130,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DatabaseClasses\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
