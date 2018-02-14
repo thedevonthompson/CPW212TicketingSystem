@@ -56,6 +56,8 @@
   <ItemGroup>
     <Compile Include="Classes\Comment.cs" />
     <Compile Include="Classes\State.cs" />
+    <Compile Include="DatabaseClasses\PriorityDB.cs" />
+    <Compile Include="DatabaseClasses\TicketDB.cs" />
     <Compile Include="DatabaseClasses\UserDB.cs" />
     <Compile Include="Forms\FrmLogin.cs">
       <SubType>Form</SubType>
@@ -74,6 +76,12 @@
     </Compile>
     <Compile Include="Forms\FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmTicket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmTicket.Designer.cs">
+      <DependentUpon>FrmTicket.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201801312012253_Initial.cs" />
     <Compile Include="Migrations\201801312012253_Initial.Designer.cs">
@@ -100,6 +108,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmTicket.resx">
+      <DependentUpon>FrmTicket.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801312012253_Initial.resx">
       <DependentUpon>201801312012253_Initial.cs</DependentUpon>

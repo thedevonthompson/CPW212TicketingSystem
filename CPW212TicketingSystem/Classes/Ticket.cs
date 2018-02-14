@@ -11,7 +11,7 @@ namespace CPW212TicketingSystem
     public class Ticket
     {
         [Key]
-        public int TicketID { get; set; }
+        public int? TicketID { get; set; }
 
         [Required]
         [StringLength(80)]
@@ -23,7 +23,8 @@ namespace CPW212TicketingSystem
         [Required]
         public DateTime Created { get; set; }
 
-        public DateTime? LastUpdated { get; set; }
+        // Should be required now, default value should be the date of creation - TODO: Create migration.
+        public DateTime LastUpdated { get; set; }
 
         public DateTime? DueDate { get; set; }
 
@@ -42,5 +43,32 @@ namespace CPW212TicketingSystem
         public virtual ICollection<Comment> Comments { get; set; }
 
         public virtual ICollection<String> History { get; set; }
+
+        public Ticket(Ticket t)
+            : this(t.TicketID, t.Title, t.IsCompleted, t.Created, t.LastUpdated, t.DueDate, t.User, t.Priority, t.AssignedUsers, t.Comments, t.History) {}
+
+        /// <summary>
+        /// This overload is used when creating new tickets.
+        /// </summary>
+        /// <param name="title"></param>
+        /// <param name="due"></param>
+        /// <param name="p"></param>
+        public Ticket(string title, DateTime? due, Priority p)
+        : this(null, title, false, DateTime.Now, null, due, State.CurrUser, p, new List<User>(), new List<Comment>(), new List<String>()) {}
+
+        public Ticket(int? id, string title, bool complete, DateTime created, DateTime? updated, DateTime? due, User user, Priority p, ICollection<User> assignedUsers, ICollection<Comment> comments, ICollection<String> history)
+        {
+            TicketID = id;
+            Title = title;
+            IsCompleted = complete;
+            Created = created;
+            LastUpdated = updated ?? created;
+            DueDate = due;
+            User = user;
+            Priority = p;
+            AssignedUsers = assignedUsers;
+            Comments = comments;
+            History = history;
+        }
     }
 }
