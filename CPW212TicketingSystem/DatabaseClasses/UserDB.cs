@@ -8,6 +8,11 @@ namespace CPW212TicketingSystem
 {
     static class UserDB
     {
+        public static List<User> GetAllUsers()
+        {
+            return new TicketingSystemDBContext().Users.ToList();
+        }
+
         public static User GetUser(string username)
         {
             var db = new TicketingSystemDBContext();
@@ -36,15 +41,15 @@ namespace CPW212TicketingSystem
             }
         }
 
-         /// <summary>
-         /// 
-         /// </summary>
-         /// <param name="user"></param>
-         /// <returns>Returns true if username is in Users table</returns>
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns>Returns true if username is in Users table</returns>
         public static bool Update(User user)
         {
             var db = new TicketingSystemDBContext();
-            User u = db.Users.Find(user.Username);
+            User u = db.Users.Find(user.UserID);
 
             if (u == null)
             {
