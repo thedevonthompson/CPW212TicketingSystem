@@ -37,6 +37,12 @@ namespace CPW212TicketingSystem
 
         public virtual Role Role { get; set; }
 
+        /// <summary>
+        /// This constructor exists to make entity framework work.
+        /// https://stackoverflow.com/questions/31543255/why-must-i-have-a-parameterless-constructor-for-code-first-entity-framework
+        /// </summary>
+        private User() {}
+
         public User(User u)
         : this(u.UserID, u.Username, u.Password, u.FirstName, u.LastName, u.AssignedTickets, u.Role) {}
 
