@@ -43,6 +43,12 @@ namespace CPW212TicketingSystem
 
         public virtual ICollection<String> History { get; set; }
 
+        /// <summary>
+        /// This constructor exists to make entity framework work.
+        /// https://stackoverflow.com/questions/31543255/why-must-i-have-a-parameterless-constructor-for-code-first-entity-framework
+        /// </summary>
+        private Ticket() { }
+
         public Ticket(Ticket t)
             : this(t.TicketID, t.Title, t.IsCompleted, t.Created, t.LastUpdated, t.DueDate, t.User, t.Priority, t.AssignedUsers, t.Comments, t.History) {}
 

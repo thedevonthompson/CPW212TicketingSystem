@@ -17,12 +17,18 @@ namespace CPW212TicketingSystem
         /// A number representing the hierarchical order of priority.
         /// </summary>
         [Required]
-        [Index(IsUnique = true)] // TODO: Add migration to make PriorityLevel unique in the database. Also, change name to Level for consistency.
+        [Index(IsUnique = true)]
         public byte Level { get; set; }
 
         [Required]
         [StringLength(80)]
         public string Name { get; set; }
+
+        /// <summary>
+        /// This constructor exists to make entity framework work.
+        /// https://stackoverflow.com/questions/31543255/why-must-i-have-a-parameterless-constructor-for-code-first-entity-framework
+        /// </summary>
+        private Priority() { }
 
         public Priority(Priority p)
         : this(p.PriorityID, p.Level, p.Name) {}
