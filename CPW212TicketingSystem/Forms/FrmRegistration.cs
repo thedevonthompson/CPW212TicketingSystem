@@ -20,7 +20,7 @@ namespace CPW212TicketingSystem
         private void btnRegister_Click(object sender, EventArgs e)
         {
             // TODO: Get a list of roles and assign one to the new user.
-            User user = new User(txtUsername.Text, txtPassword.Text, txtFirstName.Text, txtLastName.Text, new Role());
+            User user = new User(txtUsername.Text, txtPassword.Text, txtFirstName.Text, txtLastName.Text, null);
 
             if (UserDB.Add(user))
             {

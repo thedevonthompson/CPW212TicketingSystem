@@ -159,7 +159,7 @@
             this.TxtTicketCreator.Enabled = false;
             this.TxtTicketCreator.Location = new System.Drawing.Point(323, 47);
             this.TxtTicketCreator.Name = "TxtTicketCreator";
-            this.TxtTicketCreator.Size = new System.Drawing.Size(100, 20);
+            this.TxtTicketCreator.Size = new System.Drawing.Size(133, 20);
             this.TxtTicketCreator.TabIndex = 13;
             // 
             // CbxCompleted

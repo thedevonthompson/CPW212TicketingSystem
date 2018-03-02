@@ -23,6 +23,15 @@ namespace CPW212TicketingSystem
             if (login.ShowDialog() == DialogResult.OK)
             {
                 Application.Run(new FrmMain());
+
+                //if (State.CurrUser.Role.IsTechnician)
+                //{
+                //    Application.Run(new FrmMainTechnician());
+                //}
+                //else
+                //{
+                //    Application.Run(new FrmMain());
+                //}
             }
             else
             {

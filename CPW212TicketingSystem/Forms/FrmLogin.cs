@@ -37,7 +37,6 @@ namespace CPW212TicketingSystem
 
 
                 State.CurrUser = userToLogin;
-                MessageBox.Show("Success");
                 this.DialogResult = DialogResult.OK;
             }
             else

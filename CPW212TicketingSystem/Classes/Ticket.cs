@@ -75,5 +75,10 @@ namespace CPW212TicketingSystem
             Comments = comments;
             History = history;
         }
+
+        public override string ToString()
+        {
+            return $"{Created.ToShortDateString()}  -  {Title}  -  Completed: {IsCompleted}";
+        }
     }
 }
