@@ -22,16 +22,14 @@ namespace CPW212TicketingSystem
             // check to see iff credentials match if so run the main form, if the user Closes out before logging in it will end the program
             if (login.ShowDialog() == DialogResult.OK)
             {
-                Application.Run(new FrmMain());
-
-                //if (State.CurrUser.Role.IsTechnician)
-                //{
-                //    Application.Run(new FrmMainTechnician());
-                //}
-                //else
-                //{
-                //    Application.Run(new FrmMain());
-                //}
+                if (State.CurrUser.Role.IsTechnician)
+                {
+                    Application.Run(new FrmMainTechnician());
+                }
+                else
+                {
+                    Application.Run(new FrmMain());
+                }
             }
             else
             {

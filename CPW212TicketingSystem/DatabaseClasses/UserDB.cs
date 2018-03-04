@@ -91,7 +91,10 @@ namespace CPW212TicketingSystem
             var db = new TicketingSystemDBContext();
 
             // we can omit the where clause as single or default implicitly should only return 1 result
-            User userLoginCheck = db.Users.SingleOrDefault(currUser => currUser.Username == Username && currUser.Password == Password);
+            User userLoginCheck = db.Users
+                                    .Include("Role")
+                                    .Where(currUser => currUser.Username == Username && currUser.Password == Password)
+                                    .SingleOrDefault();
 
             return userLoginCheck;
         }
