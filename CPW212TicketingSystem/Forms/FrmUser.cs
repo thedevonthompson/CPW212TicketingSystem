@@ -3,9 +3,9 @@ using System.Windows.Forms;
 
 namespace CPW212TicketingSystem
 {
-    public partial class FrmRegistration : Form
+    public partial class FrmUser : Form
     {
-        public FrmRegistration()
+        public FrmUser()
         {
             InitializeComponent();
         }
