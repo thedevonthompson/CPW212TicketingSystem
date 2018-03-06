@@ -23,10 +23,9 @@ namespace CPW212TicketingSystem
         public static void Create(Ticket t)
         {
             var db = new TicketingSystemDBContext();
-            db.Entry(t).State = EntityState.Added;
-            // The following pieces of code prevent EF from trying to insert the priority or the user again.
-            db.Entry(t.Priority).State = EntityState.Unchanged;
-            db.Entry(t.User).State = EntityState.Unchanged;
+            db.Users.Attach(t.User);
+            db.Priorities.Attach(t.Priority);
+            db.Tickets.Add(t);
             db.SaveChanges();
         }
 

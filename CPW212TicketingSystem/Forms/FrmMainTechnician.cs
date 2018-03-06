@@ -92,5 +92,10 @@ namespace CPW212TicketingSystem.Forms
         {
             // Open up the Priority Crud Form.
         }
+
+        private void LstTickets_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
