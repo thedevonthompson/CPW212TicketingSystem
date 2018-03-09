@@ -58,7 +58,8 @@ namespace CPW212TicketingSystem
 
         private void BtnViewComments_Click(object sender, EventArgs e)
         {
-            // Not implemented.
+            CommentForm comments = new CommentForm(Ticket);
+            comments.ShowDialog();
         }
 
         private void BtnAddOrUpdate_Click(object sender, EventArgs e)

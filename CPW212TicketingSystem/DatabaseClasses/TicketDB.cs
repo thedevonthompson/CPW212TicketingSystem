@@ -9,6 +9,7 @@ namespace CPW212TicketingSystem
 {
     public static class TicketDB
     {
+        private static TicketingSystemDBContext db = new TicketingSystemDBContext();
 
         public static void AddOrUpdate(Ticket t)
         {
@@ -23,10 +24,9 @@ namespace CPW212TicketingSystem
         public static void Create(Ticket t)
         {
             var db = new TicketingSystemDBContext();
-            db.Entry(t).State = EntityState.Added;
-            // The following pieces of code prevent EF from trying to insert the priority or the user again.
-            db.Entry(t.Priority).State = EntityState.Unchanged;
-            db.Entry(t.User).State = EntityState.Unchanged;
+            db.Users.Attach(t.User);
+            db.Priorities.Attach(t.Priority);
+            db.Tickets.Add(t);
             db.SaveChanges();
         }
 
@@ -50,6 +50,12 @@ namespace CPW212TicketingSystem
                                                  .Where(t => t.User.UserID == currUser.UserID)
                                                  .OrderBy(t => t.Created)
                                                  .ToList();
+        }
+
+        public static Ticket FindTicketByID(int? id)
+        {
+            //return db.Tickets.SingleOrDefault(t => t.TicketID == id);
+            return db.Tickets.Include("User").Single(t => t.TicketID == id);
         }
 
         #endregion

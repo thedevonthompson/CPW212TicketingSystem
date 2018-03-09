@@ -56,6 +56,13 @@
   <ItemGroup>
     <Compile Include="Classes\Comment.cs" />
     <Compile Include="Classes\State.cs" />
+    <Compile Include="DatabaseClasses\CommentDB.cs" />
+    <Compile Include="Forms\CommentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CommentForm.Designer.cs">
+      <DependentUpon>CommentForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DatabaseClasses\PriorityDB.cs" />
     <Compile Include="DatabaseClasses\TicketDB.cs" />
     <Compile Include="Forms\FrmLogin.cs">
@@ -88,17 +95,15 @@
     <Compile Include="Forms\FrmTicket.Designer.cs">
       <DependentUpon>FrmTicket.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201801312012253_Initial.cs" />
-    <Compile Include="Migrations\201801312012253_Initial.Designer.cs">
-      <DependentUpon>201801312012253_Initial.cs</DependentUpon>
+    <Compile Include="Forms\FrmAddComment.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Migrations\201801312213209_PriorityLevel.cs" />
-    <Compile Include="Migrations\201801312213209_PriorityLevel.Designer.cs">
-      <DependentUpon>201801312213209_PriorityLevel.cs</DependentUpon>
+    <Compile Include="Forms\FrmAddComment.Designer.cs">
+      <DependentUpon>FrmAddComment.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201802142046248_RolePriorityLevelUnique.cs" />
-    <Compile Include="Migrations\201802142046248_RolePriorityLevelUnique.Designer.cs">
-      <DependentUpon>201802142046248_RolePriorityLevelUnique.cs</DependentUpon>
+    <Compile Include="Migrations\201803070133479_fixeduserscomments.cs" />
+    <Compile Include="Migrations\201803070133479_fixeduserscomments.Designer.cs">
+      <DependentUpon>201803070133479_fixeduserscomments.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Classes\Priority.cs" />
@@ -109,6 +114,12 @@
     <Compile Include="TicketingSystemDBContext.cs" />
     <Compile Include="Classes\User.cs" />
     <Compile Include="DatabaseClasses\UserDB.cs" />
+    <EmbeddedResource Include="Forms\CommentForm.resx">
+      <DependentUpon>CommentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmAddComment.resx">
+      <DependentUpon>FrmAddComment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -124,14 +135,8 @@
     <EmbeddedResource Include="Forms\FrmTicket.resx">
       <DependentUpon>FrmTicket.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801312012253_Initial.resx">
-      <DependentUpon>201801312012253_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801312213209_PriorityLevel.resx">
-      <DependentUpon>201801312213209_PriorityLevel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802142046248_RolePriorityLevelUnique.resx">
-      <DependentUpon>201802142046248_RolePriorityLevelUnique.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201803070133479_fixeduserscomments.resx">
+      <DependentUpon>201803070133479_fixeduserscomments.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
