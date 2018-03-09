@@ -27,7 +27,7 @@ namespace CPW212TicketingSystem
         public static bool Add(User user)
         {
             var db = new TicketingSystemDBContext();
-            User u = db.Users.Find(user.Username);
+            User u = db.Users.Find(user.UserID);
 
             if (u == null)
             {
