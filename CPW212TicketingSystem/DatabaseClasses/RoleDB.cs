@@ -12,5 +12,22 @@ namespace CPW212TicketingSystem
         {
             return new TicketingSystemDBContext().Roles.ToList();
         }
+
+        public static bool Add(Role role)
+        {
+            var db = new TicketingSystemDBContext();
+            Role r = db.Roles.Find(role.RoleID);
+
+            if (r == null)
+            {
+                db.Roles.Add(role);
+                db.SaveChanges();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
