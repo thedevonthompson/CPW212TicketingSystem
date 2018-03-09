@@ -19,9 +19,7 @@ namespace CPW212TicketingSystem
             InitializeComponent();
             CurrTicket = passedTicket;
         }
-        // temporary made tickets just for testing purposes
 
-        private static Comment currComment;
 
         private void CommentForm_Load(object sender, EventArgs e)
         {
@@ -30,15 +28,14 @@ namespace CPW212TicketingSystem
 
         private void lstBxComments_SelectedIndexChanged(object sender, EventArgs e)
         {
-            currComment = (Comment) lstBxComments.SelectedItem;
-            txtBxComment.Text = currComment.Text;
+            txtBxComment.Text = CurrComment().Text;
         }
 
 
         // Allows users to update their ticket comments, but denies users who try to edit technician comments. NOTE: technicians may edit users tickets
         private void btnEditComment_Click(object sender, EventArgs e)
         {
-            Comment commentToEdit = (Comment)lstBxComments.SelectedItem;
+            Comment commentToEdit = CurrComment();
             if (State.CurrUser.Username != CurrComment().User.Username && !State.CurrUser.Role.IsTechnician)
             {
                 if (commentToEdit != null)
@@ -89,7 +86,7 @@ namespace CPW212TicketingSystem
             }
         }
 
-        // method for grabbing the comment
+        // method for grabbing the comment selected on the list box
         private  Comment CurrComment()
         { 
             return (Comment)lstBxComments.SelectedItem;
