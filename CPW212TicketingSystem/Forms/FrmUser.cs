@@ -21,13 +21,13 @@ namespace CPW212TicketingSystem
             {
                 User newUser = new User(TxtUsername.Text, TxtPassword.Text, TxtFirstName.Text, TxtLastName.Text, (Role)CboRole.SelectedItem);
 
-                // TODO: Show if user was succesfully registered
-                if (UserDB.Add(newUser))
+                try
                 {
-                    MessageBox.Show("Registration successfull.");
+                    UserDB.Add(newUser);
+                    MessageBox.Show("Registration successful");
                     RefreshForm();
                 }
-                else
+                catch
                 {
                     MessageBox.Show("Error: Registration not successful. This username already exists.");
                 }
@@ -41,13 +41,13 @@ namespace CPW212TicketingSystem
                 selUser.Username = TxtUsername.Text;
                 selUser.Password = TxtPassword.Text;
 
-                // TODO: Show if user was succesfully updated
-                if (UserDB.Update(selUser))
+                try
                 {
-                    MessageBox.Show("Update successful.");
+                    UserDB.Update(selUser);
+                    MessageBox.Show("Update successful");
                     RefreshForm();
                 }
-                else
+                catch
                 {
                     MessageBox.Show("Error: Update not successful");
                 }
@@ -150,7 +150,19 @@ namespace CPW212TicketingSystem
             DialogResult result = MessageBox.Show($"Are you sure you want to delete {selUser}?", "Confirmation", MessageBoxButtons.YesNo);
 
             if (result == DialogResult.Yes)
-                UserDB.Delete(selUser);
+            {
+                try
+                {
+                    UserDB.Delete(selUser);
+                    MessageBox.Show("User Deleted successfuly");
+                    RefreshForm();
+                }
+                catch
+                {
+                    MessageBox.Show("Error: User not deleted successfuly");
+                }
+            }
+                
         }
     }
 }
