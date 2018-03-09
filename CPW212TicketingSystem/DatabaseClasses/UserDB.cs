@@ -6,8 +6,25 @@ using System.Threading.Tasks;
 
 namespace CPW212TicketingSystem
 {
+    /// <summary>
+    /// Responsible for User CRUD interactions with the database
+    /// </summary>
     static class UserDB
     {
+        /// <summary>
+        /// Returns all Users from the database
+        /// </summary>
+        /// <returns>List of Users</returns>
+        public static List<User> GetAllUsers()
+        {
+            return new TicketingSystemDBContext().Users.ToList();
+        }
+
+        /// <summary>
+        /// Returns a user by username
+        /// </summary>
+        /// <param name="username"></param>
+        /// <returns>User</returns>
         private static TicketingSystemDBContext db = new TicketingSystemDBContext();
         public static User GetUser(string username)
         {
@@ -16,36 +33,25 @@ namespace CPW212TicketingSystem
         }
 
         /// <summary>
-        /// 
+        /// Adds the user passed in to the database
         /// </summary>
-        /// <param name="user"></param>
-        /// <returns>Returns false if username already exists</returns>
-        public static bool Add(User user)
+        /// <param name="user">User to be added to the database</param>
+        public static void Add(User user)
         {
             var db = new TicketingSystemDBContext();
-            User u = db.Users.Find(user.Username);
-
-            if (u == null)
-            {
-                db.Users.Add(user);
-                db.SaveChanges();
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            db.Users.Add(user);
+            db.SaveChanges();
         }
 
-         /// <summary>
-         /// 
-         /// </summary>
-         /// <param name="user"></param>
-         /// <returns>Returns true if username is in Users table</returns>
+        /// <summary>
+        /// Updates the User passed in by userID
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns>Returns true if User with the UserID is in Users table</returns>
         public static bool Update(User user)
         {
             var db = new TicketingSystemDBContext();
-            User u = db.Users.Find(user.Username);
+            User u = db.Users.Find(user.UserID);
 
             if (u == null)
             {
@@ -66,26 +72,22 @@ namespace CPW212TicketingSystem
         }
 
         /// <summary>
-        /// 
+        /// Deletes the User passed in from the database
         /// </summary>
-        /// <param name="user"></param>
-        /// <returns>Returns true if user exists in Users table</returns>
-        public static bool Delete(User user)
+        /// <param name="user">User to be deleted</param>
+        public static void Delete(User user)
         {
             var db = new TicketingSystemDBContext();
-            User u = db.Users.Find(user.Username);
-
-            if (u == null)
-            {
-                return false;
-            }
-            else
-            {
-                db.Users.Remove(user);
-                db.SaveChanges();
-                return true;
-            }
+            db.Users.Remove(user);
+            db.SaveChanges();
         }
+
+        /// <summary>
+        /// Returns the user with the current name and password
+        /// </summary>
+        /// <param name="Username">Username to be found</param>
+        /// <param name="Password">Password to be found </param>
+        /// <returns></returns>
         public static User FindUser(string Username, string Password)
         {
             // stores our dbcontext "our tracker" for our database into a variable so can act upon it.
