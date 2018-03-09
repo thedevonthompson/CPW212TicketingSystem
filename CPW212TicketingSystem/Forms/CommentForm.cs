@@ -38,6 +38,11 @@ namespace CPW212TicketingSystem
             Comment commentToEdit = CurrComment();
             if (State.CurrUser.Username != CurrComment().User.Username && !State.CurrUser.Role.IsTechnician)
             {
+                MessageBox.Show("You may only edit your own comments");
+            }
+            else
+            {
+               
                 if (commentToEdit != null)
                 {
                     commentToEdit.Text = txtBxComment.Text;
@@ -46,10 +51,11 @@ namespace CPW212TicketingSystem
                     PopulateComments();
                 }
                 else
-                    MessageBox.Show("Please select an comment to edit, if there are no comments to select from then use the new button to create one.");
+                {
+                    MessageBox.Show(
+                        "Please select an comment to edit, if there are no comments to select from then use the new button to create one.");
+                }
             }
-            else
-                MessageBox.Show("You may only edit your own comments");
         }
 
 
@@ -75,10 +81,8 @@ namespace CPW212TicketingSystem
         {
             // This will disallow deleting of comments only if they belong to the user or if the current logged in user is a tech
             if (State.CurrUser.Username != CurrComment().User.Username && !State.CurrUser.Role.IsTechnician )
-            {
                 MessageBox.Show("Access Denied");
 
-            }
             else
             {
                 CommentDB.DeleteComment(CurrComment());
