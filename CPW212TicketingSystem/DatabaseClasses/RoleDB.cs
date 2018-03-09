@@ -43,5 +43,12 @@ namespace CPW212TicketingSystem
                 return true;
             }
         }
+
+        public static void Delete(Role role)
+        {
+            var db = new TicketingSystemDBContext();
+            db.Roles.Remove(role);
+            db.SaveChanges();
+        }
     }
 }
