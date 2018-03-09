@@ -95,6 +95,12 @@
     <Compile Include="Forms\FrmTicket.Designer.cs">
       <DependentUpon>FrmTicket.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmRole.Designer.cs">
+      <DependentUpon>FrmRole.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmAddComment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmMainTechnician.resx">
       <DependentUpon>FrmMainTechnician.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmRole.resx">
+      <DependentUpon>FrmRole.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmUser.resx">
       <DependentUpon>FrmUser.cs</DependentUpon>
