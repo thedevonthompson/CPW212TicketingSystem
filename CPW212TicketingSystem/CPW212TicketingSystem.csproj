@@ -101,17 +101,9 @@
     <Compile Include="Forms\FrmAddComment.Designer.cs">
       <DependentUpon>FrmAddComment.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201801312012253_Initial.cs" />
-    <Compile Include="Migrations\201801312012253_Initial.Designer.cs">
-      <DependentUpon>201801312012253_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801312213209_PriorityLevel.cs" />
-    <Compile Include="Migrations\201801312213209_PriorityLevel.Designer.cs">
-      <DependentUpon>201801312213209_PriorityLevel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201802142046248_RolePriorityLevelUnique.cs" />
-    <Compile Include="Migrations\201802142046248_RolePriorityLevelUnique.Designer.cs">
-      <DependentUpon>201802142046248_RolePriorityLevelUnique.cs</DependentUpon>
+    <Compile Include="Migrations\201803070133479_fixeduserscomments.cs" />
+    <Compile Include="Migrations\201803070133479_fixeduserscomments.Designer.cs">
+      <DependentUpon>201803070133479_fixeduserscomments.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Classes\Priority.cs" />
@@ -143,14 +135,8 @@
     <EmbeddedResource Include="Forms\FrmTicket.resx">
       <DependentUpon>FrmTicket.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801312012253_Initial.resx">
-      <DependentUpon>201801312012253_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801312213209_PriorityLevel.resx">
-      <DependentUpon>201801312213209_PriorityLevel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802142046248_RolePriorityLevelUnique.resx">
-      <DependentUpon>201802142046248_RolePriorityLevelUnique.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201803070133479_fixeduserscomments.resx">
+      <DependentUpon>201803070133479_fixeduserscomments.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

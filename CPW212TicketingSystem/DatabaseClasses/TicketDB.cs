@@ -9,6 +9,7 @@ namespace CPW212TicketingSystem
 {
     public static class TicketDB
     {
+        private static TicketingSystemDBContext db = new TicketingSystemDBContext();
 
         public static void AddOrUpdate(Ticket t)
         {
@@ -49,6 +50,12 @@ namespace CPW212TicketingSystem
                                                  .Where(t => t.User.UserID == currUser.UserID)
                                                  .OrderBy(t => t.Created)
                                                  .ToList();
+        }
+
+        public static Ticket FindTicketByID(int? id)
+        {
+            //return db.Tickets.SingleOrDefault(t => t.TicketID == id);
+            return db.Tickets.Include("User").Single(t => t.TicketID == id);
         }
 
         #endregion

@@ -43,15 +43,15 @@ namespace CPW212TicketingSystem
 
         public void PopulateComments()
         {
-            Ticket x = new TicketingSystemDBContext().Tickets.SingleOrDefault(t => t.TicketID == 1);
-            lstBxComments.DataSource = CommentDB.GetCommentsByTickID(x);
+            lstBxComments.DataSource = CommentDB.GetCommentsByTickID(CurrTicket);
         }
 
         private void btnNewComment_Click(object sender, EventArgs e)
         {
-            Ticket x = new TicketingSystemDBContext().Tickets.SingleOrDefault(t => t.TicketID == 1);
-            FrmAddComment addComment = new FrmAddComment(x);
+
+            FrmAddComment addComment = new FrmAddComment(CurrTicket);
             addComment.ShowDialog();
+            PopulateComments();
         }
 
         private void btnDeleteComment_Click(object sender, EventArgs e)

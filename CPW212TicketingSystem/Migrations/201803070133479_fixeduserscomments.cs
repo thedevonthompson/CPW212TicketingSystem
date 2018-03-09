@@ -3,7 +3,7 @@ namespace CPW212TicketingSystem.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Initial : DbMigration
+    public partial class fixeduserscomments : DbMigration
     {
         public override void Up()
         {
@@ -16,14 +16,14 @@ namespace CPW212TicketingSystem.Migrations
                         IsInternal = c.Boolean(nullable: false),
                         Created = c.DateTime(nullable: false),
                         LastEdited = c.DateTime(),
-                        Ticket_TicketID = c.Int(),
                         User_UserID = c.Int(),
+                        Ticket_TicketID = c.Int(),
                     })
                 .PrimaryKey(t => t.CommentID)
-                .ForeignKey("dbo.Tickets", t => t.Ticket_TicketID)
                 .ForeignKey("dbo.Users", t => t.User_UserID)
-                .Index(t => t.Ticket_TicketID)
-                .Index(t => t.User_UserID);
+                .ForeignKey("dbo.Tickets", t => t.Ticket_TicketID)
+                .Index(t => t.User_UserID)
+                .Index(t => t.Ticket_TicketID);
             
             CreateTable(
                 "dbo.Tickets",
@@ -33,7 +33,7 @@ namespace CPW212TicketingSystem.Migrations
                         Title = c.String(nullable: false, maxLength: 80),
                         IsCompleted = c.Boolean(nullable: false),
                         Created = c.DateTime(nullable: false),
-                        LastUpdated = c.DateTime(),
+                        LastUpdated = c.DateTime(nullable: false),
                         DueDate = c.DateTime(),
                         Priority_PriorityID = c.Int(),
                         User_UserID = c.Int(),
@@ -57,6 +57,7 @@ namespace CPW212TicketingSystem.Migrations
                     })
                 .PrimaryKey(t => t.UserID)
                 .ForeignKey("dbo.Roles", t => t.Role_RoleID)
+                .Index(t => t.Username, unique: true)
                 .Index(t => t.Role_RoleID);
             
             CreateTable(
@@ -64,7 +65,7 @@ namespace CPW212TicketingSystem.Migrations
                 c => new
                     {
                         RoleID = c.Int(nullable: false, identity: true),
-                        RoleLevel = c.Byte(nullable: false),
+                        Level = c.Byte(nullable: false),
                         Name = c.String(nullable: false, maxLength: 80),
                         IsTechnician = c.Boolean(nullable: false),
                         CanDeleteTickets = c.Boolean(nullable: false),
@@ -73,16 +74,19 @@ namespace CPW212TicketingSystem.Migrations
                         CanEditRoles = c.Boolean(nullable: false),
                         CanEditUsers = c.Boolean(nullable: false),
                     })
-                .PrimaryKey(t => t.RoleID);
+                .PrimaryKey(t => t.RoleID)
+                .Index(t => t.Level, unique: true);
             
             CreateTable(
                 "dbo.Priorities",
                 c => new
                     {
                         PriorityID = c.Int(nullable: false, identity: true),
+                        Level = c.Byte(nullable: false),
                         Name = c.String(nullable: false, maxLength: 80),
                     })
-                .PrimaryKey(t => t.PriorityID);
+                .PrimaryKey(t => t.PriorityID)
+                .Index(t => t.Level, unique: true);
             
             CreateTable(
                 "dbo.TicketUsers",
@@ -101,20 +105,23 @@ namespace CPW212TicketingSystem.Migrations
         
         public override void Down()
         {
-            DropForeignKey("dbo.Comments", "User_UserID", "dbo.Users");
             DropForeignKey("dbo.Tickets", "User_UserID", "dbo.Users");
             DropForeignKey("dbo.Tickets", "Priority_PriorityID", "dbo.Priorities");
             DropForeignKey("dbo.Comments", "Ticket_TicketID", "dbo.Tickets");
             DropForeignKey("dbo.TicketUsers", "UserID", "dbo.Users");
             DropForeignKey("dbo.TicketUsers", "TicketID", "dbo.Tickets");
             DropForeignKey("dbo.Users", "Role_RoleID", "dbo.Roles");
+            DropForeignKey("dbo.Comments", "User_UserID", "dbo.Users");
             DropIndex("dbo.TicketUsers", new[] { "UserID" });
             DropIndex("dbo.TicketUsers", new[] { "TicketID" });
+            DropIndex("dbo.Priorities", new[] { "Level" });
+            DropIndex("dbo.Roles", new[] { "Level" });
             DropIndex("dbo.Users", new[] { "Role_RoleID" });
+            DropIndex("dbo.Users", new[] { "Username" });
             DropIndex("dbo.Tickets", new[] { "User_UserID" });
             DropIndex("dbo.Tickets", new[] { "Priority_PriorityID" });
-            DropIndex("dbo.Comments", new[] { "User_UserID" });
             DropIndex("dbo.Comments", new[] { "Ticket_TicketID" });
+            DropIndex("dbo.Comments", new[] { "User_UserID" });
             DropTable("dbo.TicketUsers");
             DropTable("dbo.Priorities");
             DropTable("dbo.Roles");

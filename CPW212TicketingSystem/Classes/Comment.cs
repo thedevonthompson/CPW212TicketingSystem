@@ -11,7 +11,7 @@ namespace CPW212TicketingSystem
     public class Comment
     {
         [Key]
-        public int CommentID { get; set; }
+        public int? CommentID { get; set; }
 
         [Required]
         [MaxLength(280)]
@@ -33,18 +33,29 @@ namespace CPW212TicketingSystem
         /// The ticket the comment was posted to.
         /// </summary>
         public virtual Ticket Ticket { get; set; }
+        
 
         /// <summary>
         /// This constructor exists to make entity framework work.
         /// https://stackoverflow.com/questions/31543255/why-must-i-have-a-parameterless-constructor-for-code-first-entity-framework
         /// </summary>
-        public Comment()
+        private Comment()
         {
+        }
+
+        public Comment(string text, bool isInternal, DateTime created, Ticket ticket, User user)
+        {
+            this.Text = text;
+            this.IsInternal = isInternal;
+            this.Created = created;
+            this.LastEdited = created;
+            this.User = user;
+            this.Ticket = ticket;
         }
 
         public override string ToString()
         {
-            return $"USERNAME: {User.Username} | CREATED: {Created} | EDITED:  {LastEdited} |";
+            return $"USERNAME: {State.CurrUser.Username} | CREATED: {Created} | EDITED:  {LastEdited} |";
         }
     }
 }

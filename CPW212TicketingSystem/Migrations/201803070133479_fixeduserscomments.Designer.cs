@@ -7,13 +7,13 @@ namespace CPW212TicketingSystem.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class Initial : IMigrationMetadata
+    public sealed partial class fixeduserscomments : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Initial));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(fixeduserscomments));
         
         string IMigrationMetadata.Id
         {
-            get { return "201801312012253_Initial"; }
+            get { return "201803070133479_fixeduserscomments"; }
         }
         
         string IMigrationMetadata.Source

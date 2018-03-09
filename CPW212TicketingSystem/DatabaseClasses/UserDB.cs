@@ -8,6 +8,7 @@ namespace CPW212TicketingSystem
 {
     static class UserDB
     {
+        private static TicketingSystemDBContext db = new TicketingSystemDBContext();
         public static User GetUser(string username)
         {
             var db = new TicketingSystemDBContext();
@@ -98,6 +99,13 @@ namespace CPW212TicketingSystem
 
             return userLoginCheck;
         }
+
+        public static User FindUserByID(int? id)
+        {
+            return db.Users.SingleOrDefault(x => x.UserID == id);
+        }
+
+
         // takes in a user object/context object which points to
         public static void RegisterUser(User regUser)
         {

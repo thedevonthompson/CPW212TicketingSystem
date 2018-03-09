@@ -13,19 +13,17 @@ namespace CPW212TicketingSystem
         static TicketingSystemDBContext db = new TicketingSystemDBContext();
 
         // Creates a comment and adds it to the database.
-        public static void addComment(Comment comment)
+        public static void addComment(int? tickID, int? userId, string text)
         {
             // ask joe about this 
-            db.Tickets.Attach(comment.Ticket);
-            
-            //db.Users.Attach(comment.User);
-            
+            User currUser = db.Users.Single(x => x.UserID == userId);
+            Ticket currTicket = db.Tickets.Single(t => t.TicketID == tickID);
 
-            //db.Entry(comment.User).State = EntityState.Unchanged;
-            //db.Entry(comment.Ticket).State = EntityState.Unchanged;
+            Comment newComment = new Comment(text: text, isInternal: false, ticket: currTicket,
+                created: DateTime.Now, user: currUser);
 
-            //db.Comments.Add(comment);
-            db.Entry(comment.Ticket).State = EntityState.Added;
+
+            db.Comments.Add(newComment);
             db.SaveChanges();
             
         }

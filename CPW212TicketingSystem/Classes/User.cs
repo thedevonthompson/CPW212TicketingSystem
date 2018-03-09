@@ -34,6 +34,7 @@ namespace CPW212TicketingSystem
         /// All of the tickets assigned to a user.
         /// </summary>
         public virtual ICollection<Ticket> AssignedTickets { get; set; }
+        public virtual ICollection<Comment> CreatedComments { get; set; }
 
         public virtual Role Role { get; set; }
 

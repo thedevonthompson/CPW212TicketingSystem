@@ -21,15 +21,10 @@ namespace CPW212TicketingSystem
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            Comment newComment = new Comment
-            {
-                User = State.CurrUser,
-                Created = DateTime.Now,
-                Ticket = CurrTicket,
-                Text = txtBxNewComent.Text
-            };
-            CommentDB.addComment(newComment);
+
+            CommentDB.addComment(CurrTicket.TicketID ,State.CurrUser.UserID, txtBxNewComent.Text);
             MessageBox.Show("success");
+            this.Close();
         }
     }
 }
