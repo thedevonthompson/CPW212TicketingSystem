@@ -77,7 +77,6 @@
     <Compile Include="Forms\FrmMainTechnician.Designer.cs">
       <DependentUpon>FrmMainTechnician.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FrmRegistration.cs">
     <Compile Include="Forms\FrmUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,8 +127,6 @@
     <EmbeddedResource Include="Forms\FrmMainTechnician.resx">
       <DependentUpon>FrmMainTechnician.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmRegistration.resx">
-      <DependentUpon>FrmRegistration.cs</DependentUpon>
     <EmbeddedResource Include="Forms\FrmUser.resx">
       <DependentUpon>FrmUser.cs</DependentUpon>
     </EmbeddedResource>
