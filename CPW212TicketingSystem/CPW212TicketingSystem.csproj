@@ -82,6 +82,12 @@
     <Compile Include="Forms\FrmTicket.Designer.cs">
       <DependentUpon>FrmTicket.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmRole.Designer.cs">
+      <DependentUpon>FrmRole.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\201801312012253_Initial.cs" />
     <Compile Include="Migrations\201801312012253_Initial.Designer.cs">
       <DependentUpon>201801312012253_Initial.cs</DependentUpon>
@@ -106,6 +112,9 @@
     <Compile Include="DatabaseClasses\UserDB.cs" />
     <EmbeddedResource Include="Forms\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmRole.resx">
+      <DependentUpon>FrmRole.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmUser.resx">
       <DependentUpon>FrmUser.cs</DependentUpon>
