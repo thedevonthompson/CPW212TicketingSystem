@@ -36,14 +36,14 @@
             this.TxtName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.CboLevel = new System.Windows.Forms.ComboBox();
             this.CbxDeleteTickets = new System.Windows.Forms.CheckBox();
             this.CbxAssignTickets = new System.Windows.Forms.CheckBox();
             this.CbxChangePriority = new System.Windows.Forms.CheckBox();
             this.CbxEditRoles = new System.Windows.Forms.CheckBox();
             this.CbxEditUsers = new System.Windows.Forms.CheckBox();
-            this.BtnAdd = new System.Windows.Forms.Button();
+            this.BtnAddOrUpdate = new System.Windows.Forms.Button();
             this.BtnDelete = new System.Windows.Forms.Button();
+            this.TxtLevel = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,6 +63,7 @@
             this.CboRoles.Name = "CboRoles";
             this.CboRoles.Size = new System.Drawing.Size(206, 32);
             this.CboRoles.TabIndex = 1;
+            this.CboRoles.SelectedIndexChanged += new System.EventHandler(this.CboRoles_SelectedIndexChanged);
             // 
             // groupBox1
             // 
@@ -122,14 +123,6 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Level:";
             // 
-            // CboLevel
-            // 
-            this.CboLevel.FormattingEnabled = true;
-            this.CboLevel.Location = new System.Drawing.Point(153, 129);
-            this.CboLevel.Name = "CboLevel";
-            this.CboLevel.Size = new System.Drawing.Size(84, 32);
-            this.CboLevel.TabIndex = 1;
-            // 
             // CbxDeleteTickets
             // 
             this.CbxDeleteTickets.AutoSize = true;
@@ -180,14 +173,15 @@
             this.CbxEditUsers.Text = "Edit Users";
             this.CbxEditUsers.UseVisualStyleBackColor = true;
             // 
-            // BtnAdd
+            // BtnAddOrUpdate
             // 
-            this.BtnAdd.Location = new System.Drawing.Point(69, 388);
-            this.BtnAdd.Name = "BtnAdd";
-            this.BtnAdd.Size = new System.Drawing.Size(141, 53);
-            this.BtnAdd.TabIndex = 6;
-            this.BtnAdd.Text = "Add";
-            this.BtnAdd.UseVisualStyleBackColor = true;
+            this.BtnAddOrUpdate.Location = new System.Drawing.Point(69, 388);
+            this.BtnAddOrUpdate.Name = "BtnAddOrUpdate";
+            this.BtnAddOrUpdate.Size = new System.Drawing.Size(141, 53);
+            this.BtnAddOrUpdate.TabIndex = 6;
+            this.BtnAddOrUpdate.Text = "Add";
+            this.BtnAddOrUpdate.UseVisualStyleBackColor = true;
+            this.BtnAddOrUpdate.Click += new System.EventHandler(this.BtnAddOrUpdate_Click);
             // 
             // BtnDelete
             // 
@@ -197,24 +191,33 @@
             this.BtnDelete.TabIndex = 6;
             this.BtnDelete.Text = "Delete";
             this.BtnDelete.UseVisualStyleBackColor = true;
+            this.BtnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
+            // 
+            // TxtLevel
+            // 
+            this.TxtLevel.Location = new System.Drawing.Point(151, 127);
+            this.TxtLevel.Name = "TxtLevel";
+            this.TxtLevel.Size = new System.Drawing.Size(100, 29);
+            this.TxtLevel.TabIndex = 7;
             // 
             // FrmRole
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(459, 467);
+            this.Controls.Add(this.TxtLevel);
             this.Controls.Add(this.BtnDelete);
-            this.Controls.Add(this.BtnAdd);
+            this.Controls.Add(this.BtnAddOrUpdate);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.TxtName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.CboLevel);
             this.Controls.Add(this.CboRoles);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.Name = "FrmRole";
             this.Text = "Role";
+            this.Load += new System.EventHandler(this.FrmRole_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -232,13 +235,13 @@
         private System.Windows.Forms.TextBox TxtName;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox CboLevel;
         private System.Windows.Forms.CheckBox CbxEditUsers;
         private System.Windows.Forms.CheckBox CbxAssignTickets;
         private System.Windows.Forms.CheckBox CbxEditRoles;
         private System.Windows.Forms.CheckBox CbxDeleteTickets;
         private System.Windows.Forms.CheckBox CbxChangePriority;
-        private System.Windows.Forms.Button BtnAdd;
+        private System.Windows.Forms.Button BtnAddOrUpdate;
         private System.Windows.Forms.Button BtnDelete;
+        private System.Windows.Forms.TextBox TxtLevel;
     }
 }
