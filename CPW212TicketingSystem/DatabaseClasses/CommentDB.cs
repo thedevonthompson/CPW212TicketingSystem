@@ -13,16 +13,18 @@ namespace CPW212TicketingSystem
         static TicketingSystemDBContext db = new TicketingSystemDBContext();
 
         // Creates a comment and adds it to the database.
-        public static void addComment(int? tickID, int? userId, string text)
+
+        public static void addComment(int? tickID, int? userId, string text, bool isInternal)
         {
-            // ask joe about this 
+            // because of our database being a bit complicated for entity frame work
+            // we resorted back to a primitive state of  creating our objects from scratch in the method call 
+            // so the entity state would not try to insert duplicate records
+
             User currUser = db.Users.Single(x => x.UserID == userId);
             Ticket currTicket = db.Tickets.Single(t => t.TicketID == tickID);
 
-            Comment newComment = new Comment(text: text, isInternal: false, ticket: currTicket,
+            Comment newComment = new Comment(text: text, isInternal: isInternal, ticket: currTicket,
                 created: DateTime.Now, user: currUser);
-
-
             db.Comments.Add(newComment);
             db.SaveChanges();
             
@@ -44,26 +46,46 @@ namespace CPW212TicketingSystem
             db.SaveChanges();
         }
         //Grabs all comments.
+        public static List<Comment> GetAllPublicComments()
+        {
+            return db.Comments.Where(c => c.IsInternal == false).ToList();
+        }
+        //grab all comments include tech comments known as internal comments
         public static List<Comment> GetAllComments()
         {
-            List<Comment> ListOfComments = (db.Comments).ToList();
-            return ListOfComments;
+            return  (db.Comments).ToList();
         }
-        // grabs the current ticket that we are viewing, passes it down to our extension method, to run a query that selects all comments
-        // that have a ticket and that their ticket matches, the same ticketID as the one passed in by the parameter.
-        public static List<Comment> GetCommentsByTickID(Ticket ticket)
+
+
+
+
+        // grabs all public comments for that ticket
+
+        public static List<Comment> GetAllPublicCommentsByTickID(Ticket ticket)
+        {//
+            return db.Comments.Where(c => c.Ticket.TicketID == ticket.TicketID && c.IsInternal == false).OrderBy(c => c.Created).Include("Ticket").Include("User").ToList();
+        }
+
+        //grabs all comments including internal tech comments
+
+        public static List<Comment> GetAllCommentsByTickID(Ticket ticket)
         {
-            List<Comment> TicketComments = db.Comments.Where(c => c.Ticket.TicketID == ticket.TicketID).OrderBy(c => c.Created).Include("Ticket").ToList();
-            //this will return it in sorted order of when it was created.
-
-            return TicketComments;
+            return db.Comments.Where(c => c.Ticket.TicketID == ticket.TicketID).OrderBy(c => c.Created)
+                .Include("Ticket").Include("User").ToList();
         }
 
+
+
+
+
+        //todo make these not look like garbage
         public static List<Comment> GetCommentsByUser(User user)
         {
             List<Comment> UserComments = (from c in db.Comments where c.User.UserID == user.UserID select c).ToList();
             return UserComments;
         }
+
+
 
         public static List<Comment> GetInternalComments(Ticket ticket)
         {

@@ -21,10 +21,18 @@ namespace CPW212TicketingSystem
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-
-            CommentDB.addComment(CurrTicket.TicketID ,State.CurrUser.UserID, txtBxNewComent.Text);
+            bool x = CheckBoxInternal.Checked;
+            CommentDB.addComment(CurrTicket.TicketID ,State.CurrUser.UserID, txtBxNewComent.Text, x);
             MessageBox.Show("success");
             this.Close();
+        }
+
+        private void FrmAddComment_Load(object sender, EventArgs e)
+        {
+            if (!State.CurrUser.Role.IsTechnician)
+            {
+                CheckBoxInternal.Hide();
+            }
         }
     }
 }
