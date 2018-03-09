@@ -5,11 +5,20 @@ namespace CPW212TicketingSystem
 {
     public partial class FrmUser : Form
     {
+        /// <summary>
+        /// Form constructer
+        /// </summary>
         public FrmUser()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Adds or Updates to the database depending on if a User is selected from the 
+        /// list box.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnRegisterOrUpdate_Click(object sender, EventArgs e)
         {
             if (!FieldsAreValid())
@@ -54,6 +63,10 @@ namespace CPW212TicketingSystem
             }
         }
 
+        /// <summary>
+        /// Processes through all the validation form input fields.
+        /// </summary>
+        /// <returns>bool- True if all the required fields are valid</returns>
         private bool FieldsAreValid()
         {
             if (CboRole.SelectedIndex < 0)
@@ -89,11 +102,20 @@ namespace CPW212TicketingSystem
             return true;
         }
 
+        /// <summary>
+        /// On form load current info and default values are set
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmRegistration_Load(object sender, EventArgs e)
         {
             RefreshForm();
         }
 
+        /// <summary>
+        /// resets the whole form to its empty values and retrieves current
+        /// information from the database
+        /// </summary>
         private void RefreshForm()
         {
             PopulateUserListBox();
@@ -101,16 +123,29 @@ namespace CPW212TicketingSystem
             ClearAllFields();
         }
 
+        /// <summary>
+        /// Gets a list of all Roles from the database and databinds to Role comboBox
+        /// </summary>
         private void PopulateRoleComboBox()
         {
             CboRole.DataSource = RoleDB.GetAllRoles();
         }
 
+        /// <summary>
+        /// Gets a list of all users from the database and databinds to User ListBox
+        /// </summary>
         private void PopulateUserListBox()
         {
             LstUser.DataSource = UserDB.GetAllUsers();
         }
 
+        /// <summary>
+        /// If a User is selected all their info is shown in the text and comboboxes.
+        /// RegisterOrUpdate Button text display is adjusted and Delete is enabled/ disabled depending
+        /// on if a User is selected from list box
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void LstUsers_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (LstUser.SelectedIndex < 0)
@@ -134,6 +169,9 @@ namespace CPW212TicketingSystem
             }
         }
 
+        /// <summary>
+        /// Clears all text boxes and deselects list and combo boxes
+        /// </summary>
         private void ClearAllFields()
         {
             LstUser.SelectedIndex = -1;
@@ -144,6 +182,11 @@ namespace CPW212TicketingSystem
             TxtPassword.Text = string.Empty;
         }
 
+        /// <summary>
+        /// Deletes the selected user from the ListBox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnDelete_Click(object sender, EventArgs e)
         {
             User selUser = (User)LstUser.SelectedItem;
