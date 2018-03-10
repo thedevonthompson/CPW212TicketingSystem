@@ -36,26 +36,50 @@ namespace CPW212TicketingSystem
         private void btnEditComment_Click(object sender, EventArgs e)
         {
             Comment commentToEdit = CurrComment();
-            if (State.CurrUser.Username != CurrComment().User.Username && !State.CurrUser.Role.IsTechnician)
+//            if (State.CurrUser.Username != CurrComment().User.Username && !State.CurrUser.Role.IsTechnician)
+//            {
+//                MessageBox.Show("You may only edit your own comments");
+//            }
+//            else
+//            {
+//               
+//                if (commentToEdit != null && !(string.IsNullOrWhiteSpace(lstBxComments.Text)))
+//                {
+//                    commentToEdit.Text = txtBxComment.Text;
+//                    CommentDB.UpdateComment(commentToEdit);
+//                    MessageBox.Show("Success!");
+//                    PopulateComments();
+//                }
+//                else
+//                {
+//                    MessageBox.Show(
+//                        "Please select an comment to edit, if there are no comments to select from then use the new button to create one.");
+//                }
+//            }
+
+            if (CurrComment() != null && !(string.IsNullOrWhiteSpace(txtBxComment.Text)))
             {
-                MessageBox.Show("You may only edit your own comments");
-            }
-            else
-            {
-               
-                if (commentToEdit != null)
+                
+                if (State.CurrUser.Username != CurrComment().User.Username && !State.CurrUser.Role.IsTechnician)
+                {
+                    MessageBox.Show("You may only edit your own comments");
+                }
+                else
                 {
                     commentToEdit.Text = txtBxComment.Text;
                     CommentDB.UpdateComment(commentToEdit);
                     MessageBox.Show("Success!");
                     PopulateComments();
                 }
-                else
-                {
-                    MessageBox.Show(
-                        "Please select an comment to edit, if there are no comments to select from then use the new button to create one.");
-                }
             }
+            else
+            {
+                MessageBox.Show(
+                    "Please select an comment to edit, if there are no comments to select from then use the new button to create one.");
+                PopulateComments();
+            }
+
+
         }
 
 
@@ -79,15 +103,26 @@ namespace CPW212TicketingSystem
 
         private void btnDeleteComment_Click(object sender, EventArgs e)
         {
-            // This will disallow deleting of comments only if they belong to the user or if the current logged in user is a tech
-            if (State.CurrUser.Username != CurrComment().User.Username && !State.CurrUser.Role.IsTechnician )
-                MessageBox.Show("Access Denied");
+            if (CurrComment() != null )
+            {
+                // This will disallow deleting of comments only if they belong to the user or if the current logged in user is a tech
+                if (State.CurrUser.Username != CurrComment().User.Username && !State.CurrUser.Role.IsTechnician)
+                    MessageBox.Show("Access Denied");
 
+                else
+                {
+                    CommentDB.DeleteComment(CurrComment());
+                    PopulateComments();
+                }
+
+            }
             else
             {
-                CommentDB.DeleteComment(CurrComment());
+                MessageBox.Show(
+                    "No Comment selected");
                 PopulateComments();
             }
+
         }
 
         // method for grabbing the comment selected on the list box

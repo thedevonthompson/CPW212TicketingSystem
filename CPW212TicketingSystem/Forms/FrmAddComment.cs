@@ -21,10 +21,18 @@ namespace CPW212TicketingSystem
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            bool x = CheckBoxInternal.Checked;
-            CommentDB.addComment(CurrTicket.TicketID ,State.CurrUser.UserID, txtBxNewComent.Text, x);
-            MessageBox.Show("success");
-            this.Close();
+            if (!string.IsNullOrWhiteSpace(txtBxNewComent.Text))
+            {
+                bool x = CheckBoxInternal.Checked;
+                CommentDB.addComment(CurrTicket.TicketID, State.CurrUser.UserID, txtBxNewComent.Text, x);
+                MessageBox.Show("success");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Please add something to the text box");
+            }
+
         }
 
         private void FrmAddComment_Load(object sender, EventArgs e)

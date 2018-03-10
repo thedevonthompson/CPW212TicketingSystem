@@ -55,7 +55,7 @@ namespace CPW212TicketingSystem
 
         public override string ToString()
         {
-            return $"USERNAME: {State.CurrUser.Username} | CREATED: {Created} | EDITED:  {LastEdited} |";
+            return $"USERNAME: {User.Username} | CREATED: {Created} | EDITED:  {LastEdited} |";
         }
     }
 }

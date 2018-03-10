@@ -40,7 +40,7 @@ namespace CPW212TicketingSystem
         /// This constructor exists to make entity framework work.
         /// https://stackoverflow.com/questions/31543255/why-must-i-have-a-parameterless-constructor-for-code-first-entity-framework
         /// </summary>
-        private Role() { }
+        public Role() { }
 
         public Role(byte level, string name)
         : this(null, level, name, false, false, false, false, false, false) {}
