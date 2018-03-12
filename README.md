@@ -6,13 +6,16 @@ Please build the project right after you clone it, and then using the Package Ma
 
 # Default Login Info
 // Created with the Seed method in the Configuration.cs file when the "Update-Database" command is run.
+
 Non-Tech User
-  Username: CatPetter
-  Password: 123
+
+    Username: CatPetter
+    Password: 123
   
 Tech User
-  Username: Admin
-  Password: 123
+
+    Username: Admin
+    Password: 123
 
 # Authors:
  - Devon Thompson
