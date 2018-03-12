@@ -76,6 +76,11 @@ namespace CPW212TicketingSystem.Forms
                 FrmTicket ticketDetails = new FrmTicket(t);
                 ticketDetails.ShowDialog();
             }
+
+            //refreshes the form when the ticketDetails form is closed
+            //displaying any changes made to the tickets inside that form
+            //such as the updated ticket or deletion
+            LoadTickets();
         }
 
         private void BtnEditUsers_Click(object sender, EventArgs e)

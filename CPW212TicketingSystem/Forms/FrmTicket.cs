@@ -68,6 +68,7 @@ namespace CPW212TicketingSystem
             {
                 PopulateTicket();
                 TicketDB.AddOrUpdate(Ticket);
+                this.Close();
             }
         }
 
@@ -114,7 +115,9 @@ namespace CPW212TicketingSystem
             if (result == DialogResult.Yes)
             {
                 TicketDB.Delete(Ticket);
+                this.Close();
             }
         }
+
     }
 }
