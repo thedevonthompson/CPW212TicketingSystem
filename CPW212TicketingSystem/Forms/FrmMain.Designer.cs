@@ -66,6 +66,7 @@
             // DtpDueDate
             // 
             this.DtpDueDate.Checked = false;
+            this.DtpDueDate.Enabled = false;
             this.DtpDueDate.Location = new System.Drawing.Point(71, 257);
             this.DtpDueDate.Name = "DtpDueDate";
             this.DtpDueDate.ShowCheckBox = true;
