@@ -114,6 +114,7 @@ namespace CPW212TicketingSystem
             DialogResult result = MessageBox.Show("Are you sure you would like to delete this ticket?", "Confirm Deletion", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
+                CommentDB.DeleteAllComments(Ticket);
                 TicketDB.Delete(Ticket);
                 this.Close();
             }

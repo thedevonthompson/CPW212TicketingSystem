@@ -71,6 +71,13 @@ namespace CPW212TicketingSystem
             db.SaveChanges();
         }
 
+        public static void DeleteAllComments(Ticket ticket)
+        {
+            foreach(var comment in CommentDB.GetAllCommentsByTickID(ticket))
+            {
+                DeleteComment(comment);
+            }
+        }
 
         #endregion
 
