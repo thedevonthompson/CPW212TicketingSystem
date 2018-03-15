@@ -53,71 +53,79 @@
             // LblTicketID
             // 
             this.LblTicketID.AutoSize = true;
-            this.LblTicketID.Location = new System.Drawing.Point(18, 50);
+            this.LblTicketID.Location = new System.Drawing.Point(36, 96);
+            this.LblTicketID.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.LblTicketID.Name = "LblTicketID";
-            this.LblTicketID.Size = new System.Drawing.Size(54, 13);
+            this.LblTicketID.Size = new System.Drawing.Size(102, 25);
             this.LblTicketID.TabIndex = 0;
             this.LblTicketID.Text = "Ticket ID:";
             // 
             // LblTitle
             // 
             this.LblTitle.AutoSize = true;
-            this.LblTitle.Location = new System.Drawing.Point(42, 77);
+            this.LblTitle.Location = new System.Drawing.Point(84, 148);
+            this.LblTitle.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.LblTitle.Name = "LblTitle";
-            this.LblTitle.Size = new System.Drawing.Size(30, 13);
+            this.LblTitle.Size = new System.Drawing.Size(59, 25);
             this.LblTitle.TabIndex = 1;
             this.LblTitle.Text = "Title:";
             // 
             // LblCompleted
             // 
             this.LblCompleted.AutoSize = true;
-            this.LblCompleted.Location = new System.Drawing.Point(12, 126);
+            this.LblCompleted.Location = new System.Drawing.Point(24, 242);
+            this.LblCompleted.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.LblCompleted.Name = "LblCompleted";
-            this.LblCompleted.Size = new System.Drawing.Size(60, 13);
+            this.LblCompleted.Size = new System.Drawing.Size(121, 25);
             this.LblCompleted.TabIndex = 2;
             this.LblCompleted.Text = "Completed:";
             // 
             // LblLastUpdated
             // 
             this.LblLastUpdated.AutoSize = true;
-            this.LblLastUpdated.Location = new System.Drawing.Point(243, 103);
+            this.LblLastUpdated.Location = new System.Drawing.Point(486, 198);
+            this.LblLastUpdated.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.LblLastUpdated.Name = "LblLastUpdated";
-            this.LblLastUpdated.Size = new System.Drawing.Size(74, 13);
+            this.LblLastUpdated.Size = new System.Drawing.Size(146, 25);
             this.LblLastUpdated.TabIndex = 3;
             this.LblLastUpdated.Text = "Last Updated:";
             // 
             // LblDueDate
             // 
             this.LblDueDate.AutoSize = true;
-            this.LblDueDate.Location = new System.Drawing.Point(261, 131);
+            this.LblDueDate.Location = new System.Drawing.Point(522, 252);
+            this.LblDueDate.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.LblDueDate.Name = "LblDueDate";
-            this.LblDueDate.Size = new System.Drawing.Size(56, 13);
+            this.LblDueDate.Size = new System.Drawing.Size(108, 25);
             this.LblDueDate.TabIndex = 4;
             this.LblDueDate.Text = "Due Date:";
             // 
             // LblUserName
             // 
             this.LblUserName.AutoSize = true;
-            this.LblUserName.Location = new System.Drawing.Point(240, 50);
+            this.LblUserName.Location = new System.Drawing.Point(480, 96);
+            this.LblUserName.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.LblUserName.Name = "LblUserName";
-            this.LblUserName.Size = new System.Drawing.Size(77, 13);
+            this.LblUserName.Size = new System.Drawing.Size(153, 25);
             this.LblUserName.TabIndex = 5;
             this.LblUserName.Text = "Ticket Creator:";
             // 
             // LblPriority
             // 
             this.LblPriority.AutoSize = true;
-            this.LblPriority.Location = new System.Drawing.Point(31, 103);
+            this.LblPriority.Location = new System.Drawing.Point(62, 198);
+            this.LblPriority.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.LblPriority.Name = "LblPriority";
-            this.LblPriority.Size = new System.Drawing.Size(41, 13);
+            this.LblPriority.Size = new System.Drawing.Size(85, 25);
             this.LblPriority.TabIndex = 6;
             this.LblPriority.Text = "Priority:";
             // 
             // BtnViewComments
             // 
-            this.BtnViewComments.Location = new System.Drawing.Point(233, 154);
+            this.BtnViewComments.Location = new System.Drawing.Point(466, 296);
+            this.BtnViewComments.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.BtnViewComments.Name = "BtnViewComments";
-            this.BtnViewComments.Size = new System.Drawing.Size(90, 30);
+            this.BtnViewComments.Size = new System.Drawing.Size(180, 58);
             this.BtnViewComments.TabIndex = 7;
             this.BtnViewComments.Text = "View Comments";
             this.BtnViewComments.UseVisualStyleBackColor = true;
@@ -126,48 +134,56 @@
             // TxtTicketID
             // 
             this.TxtTicketID.Enabled = false;
-            this.TxtTicketID.Location = new System.Drawing.Point(78, 48);
+            this.TxtTicketID.Location = new System.Drawing.Point(156, 92);
+            this.TxtTicketID.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.TxtTicketID.Name = "TxtTicketID";
-            this.TxtTicketID.Size = new System.Drawing.Size(100, 20);
+            this.TxtTicketID.Size = new System.Drawing.Size(196, 31);
             this.TxtTicketID.TabIndex = 8;
             // 
             // TxtTitle
             // 
-            this.TxtTitle.Location = new System.Drawing.Point(78, 74);
+            this.TxtTitle.Location = new System.Drawing.Point(156, 142);
+            this.TxtTitle.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.TxtTitle.Name = "TxtTitle";
-            this.TxtTitle.Size = new System.Drawing.Size(158, 20);
+            this.TxtTitle.Size = new System.Drawing.Size(312, 31);
             this.TxtTitle.TabIndex = 9;
             // 
             // DtpLastUpdated
             // 
             this.DtpLastUpdated.Enabled = false;
-            this.DtpLastUpdated.Location = new System.Drawing.Point(323, 99);
+            this.DtpLastUpdated.Location = new System.Drawing.Point(646, 190);
+            this.DtpLastUpdated.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.DtpLastUpdated.Name = "DtpLastUpdated";
-            this.DtpLastUpdated.Size = new System.Drawing.Size(200, 20);
+            this.DtpLastUpdated.Size = new System.Drawing.Size(396, 31);
             this.DtpLastUpdated.TabIndex = 11;
             // 
             // DtpDueDate
             // 
-            this.DtpDueDate.Location = new System.Drawing.Point(323, 125);
+            this.DtpDueDate.CustomFormat = "";
+            this.DtpDueDate.Location = new System.Drawing.Point(646, 240);
+            this.DtpDueDate.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.DtpDueDate.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
+            this.DtpDueDate.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.DtpDueDate.Name = "DtpDueDate";
-            this.DtpDueDate.ShowCheckBox = true;
-            this.DtpDueDate.Size = new System.Drawing.Size(200, 20);
+            this.DtpDueDate.Size = new System.Drawing.Size(396, 31);
             this.DtpDueDate.TabIndex = 12;
             // 
             // TxtTicketCreator
             // 
             this.TxtTicketCreator.Enabled = false;
-            this.TxtTicketCreator.Location = new System.Drawing.Point(323, 47);
+            this.TxtTicketCreator.Location = new System.Drawing.Point(646, 90);
+            this.TxtTicketCreator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.TxtTicketCreator.Name = "TxtTicketCreator";
-            this.TxtTicketCreator.Size = new System.Drawing.Size(133, 20);
+            this.TxtTicketCreator.Size = new System.Drawing.Size(262, 31);
             this.TxtTicketCreator.TabIndex = 13;
             // 
             // CbxCompleted
             // 
             this.CbxCompleted.AutoSize = true;
-            this.CbxCompleted.Location = new System.Drawing.Point(78, 126);
+            this.CbxCompleted.Location = new System.Drawing.Point(156, 242);
+            this.CbxCompleted.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.CbxCompleted.Name = "CbxCompleted";
-            this.CbxCompleted.Size = new System.Drawing.Size(15, 14);
+            this.CbxCompleted.Size = new System.Drawing.Size(28, 27);
             this.CbxCompleted.TabIndex = 14;
             this.CbxCompleted.UseVisualStyleBackColor = true;
             // 
@@ -175,17 +191,19 @@
             // 
             this.LblHeader.AutoSize = true;
             this.LblHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblHeader.Location = new System.Drawing.Point(208, 15);
+            this.LblHeader.Location = new System.Drawing.Point(416, 29);
+            this.LblHeader.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.LblHeader.Name = "LblHeader";
-            this.LblHeader.Size = new System.Drawing.Size(118, 20);
+            this.LblHeader.Size = new System.Drawing.Size(222, 37);
             this.LblHeader.TabIndex = 16;
             this.LblHeader.Text = "Ticket Details";
             // 
             // BtnDelete
             // 
-            this.BtnDelete.Location = new System.Drawing.Point(433, 154);
+            this.BtnDelete.Location = new System.Drawing.Point(866, 296);
+            this.BtnDelete.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.BtnDelete.Name = "BtnDelete";
-            this.BtnDelete.Size = new System.Drawing.Size(90, 30);
+            this.BtnDelete.Size = new System.Drawing.Size(180, 58);
             this.BtnDelete.TabIndex = 17;
             this.BtnDelete.Text = "Delete Ticket";
             this.BtnDelete.UseVisualStyleBackColor = true;
@@ -194,25 +212,28 @@
             // DtpCreated
             // 
             this.DtpCreated.Enabled = false;
-            this.DtpCreated.Location = new System.Drawing.Point(323, 73);
+            this.DtpCreated.Location = new System.Drawing.Point(646, 140);
+            this.DtpCreated.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.DtpCreated.Name = "DtpCreated";
-            this.DtpCreated.Size = new System.Drawing.Size(200, 20);
+            this.DtpCreated.Size = new System.Drawing.Size(396, 31);
             this.DtpCreated.TabIndex = 19;
             // 
             // LblCreated
             // 
             this.LblCreated.AutoSize = true;
-            this.LblCreated.Location = new System.Drawing.Point(270, 77);
+            this.LblCreated.Location = new System.Drawing.Point(540, 148);
+            this.LblCreated.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.LblCreated.Name = "LblCreated";
-            this.LblCreated.Size = new System.Drawing.Size(47, 13);
+            this.LblCreated.Size = new System.Drawing.Size(94, 25);
             this.LblCreated.TabIndex = 18;
             this.LblCreated.Text = "Created:";
             // 
             // BtnAddOrUpdate
             // 
-            this.BtnAddOrUpdate.Location = new System.Drawing.Point(333, 154);
+            this.BtnAddOrUpdate.Location = new System.Drawing.Point(666, 296);
+            this.BtnAddOrUpdate.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.BtnAddOrUpdate.Name = "BtnAddOrUpdate";
-            this.BtnAddOrUpdate.Size = new System.Drawing.Size(90, 30);
+            this.BtnAddOrUpdate.Size = new System.Drawing.Size(180, 58);
             this.BtnAddOrUpdate.TabIndex = 20;
             this.BtnAddOrUpdate.Text = "Add Or Update";
             this.BtnAddOrUpdate.UseVisualStyleBackColor = true;
@@ -222,16 +243,17 @@
             // 
             this.CboPriority.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CboPriority.FormattingEnabled = true;
-            this.CboPriority.Location = new System.Drawing.Point(78, 100);
+            this.CboPriority.Location = new System.Drawing.Point(156, 192);
+            this.CboPriority.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.CboPriority.Name = "CboPriority";
-            this.CboPriority.Size = new System.Drawing.Size(121, 21);
+            this.CboPriority.Size = new System.Drawing.Size(238, 33);
             this.CboPriority.TabIndex = 21;
             // 
             // FrmTicket
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(534, 196);
+            this.ClientSize = new System.Drawing.Size(1068, 377);
             this.Controls.Add(this.CboPriority);
             this.Controls.Add(this.BtnAddOrUpdate);
             this.Controls.Add(this.DtpCreated);
@@ -252,6 +274,7 @@
             this.Controls.Add(this.LblCompleted);
             this.Controls.Add(this.LblTitle);
             this.Controls.Add(this.LblTicketID);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "FrmTicket";
             this.Text = " ";
             this.Load += new System.EventHandler(this.FrmTicket_Load);

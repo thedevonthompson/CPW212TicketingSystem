@@ -40,7 +40,7 @@ namespace CPW212TicketingSystem.Forms
             if (IsValid())
             {
                 string title = TxtTitle.Text;
-                DateTime? due = (DtpDueDate.Checked) ? (DateTime?)DtpDueDate.Value : null;
+                DateTime? due = (DateTime?)DtpDueDate.Value;
                 Priority priority = (Priority)CboPriorities.SelectedItem;
 
                 Ticket newTicket = new Ticket(title, due, priority);
@@ -86,11 +86,15 @@ namespace CPW212TicketingSystem.Forms
         private void BtnEditUsers_Click(object sender, EventArgs e)
         {
             // Open up the User Crud Form.
+            FrmUser editUser = new FrmUser();
+            editUser.ShowDialog();
         }
 
         private void BtnEditRoles_Click(object sender, EventArgs e)
         {
             // Open up the Role Crud Form.
+            FrmRole editRole = new FrmRole();
+            editRole.ShowDialog();
         }
 
         private void BtnEditPriorities_Click(object sender, EventArgs e)

@@ -27,7 +27,7 @@ namespace CPW212TicketingSystem
             if (Ticket == null)
             {
                 BtnAddOrUpdate.Text = "Add";
-                DtpCreated.Value = DateTime.Now;
+                DtpCreated.Value = DateTime.Today;
                 TxtTicketCreator.Text = State.CurrUser.ToString();
                 BtnDelete.Enabled = false;
                 BtnViewComments.Enabled = false;
