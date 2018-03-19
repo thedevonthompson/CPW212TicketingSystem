@@ -25,8 +25,8 @@ namespace CPW212TicketingSystem
             {
                 return;
             }
-
-            if (LstUser.SelectedIndex < 0)
+            //-Error- keep getting error saying username exists
+            if (CboRole.SelectedIndex > 0)
             {
                 User newUser = new User(TxtUsername.Text, TxtPassword.Text, TxtFirstName.Text, TxtLastName.Text, (Role)CboRole.SelectedItem);
 

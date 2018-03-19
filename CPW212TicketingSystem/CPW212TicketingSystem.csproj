@@ -77,6 +77,12 @@
     <Compile Include="Forms\FrmMainTechnician.Designer.cs">
       <DependentUpon>FrmMainTechnician.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmNonAdminTicket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmNonAdminTicket.Designer.cs">
+      <DependentUpon>FrmNonAdminTicket.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmMainTechnician.resx">
       <DependentUpon>FrmMainTechnician.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmNonAdminTicket.resx">
+      <DependentUpon>FrmNonAdminTicket.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmRole.resx">
       <DependentUpon>FrmRole.cs</DependentUpon>
