@@ -95,7 +95,8 @@ namespace CPW212TicketingSystem.Forms
 
         private void BtnEditPriorities_Click(object sender, EventArgs e)
         {
-            ///
+            FrmPriorities priorities = new FrmPriorities();
+            priorities.ShowDialog();
         }
 
         private void LstTickets_SelectedIndexChanged(object sender, EventArgs e)
