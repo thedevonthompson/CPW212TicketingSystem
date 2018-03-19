@@ -8,19 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CPW212TicketingSystem
+namespace CPW212TicketingSystem.Forms
 {
-    public partial class FrmTicket : Form
+    public partial class FrmNonAdminTicket : Form
     {
         public Ticket Ticket { get; set; }
 
-        public FrmTicket(Ticket t)
+        public FrmNonAdminTicket(Ticket t)
         {
             InitializeComponent();
             Ticket = t;
         }
 
-        private void FrmTicket_Load(object sender, EventArgs e)
+        private void FrmNonAdminTicket_Load(object sender, EventArgs e)
         {
             CboPriority.DataSource = PriorityDB.GetAllPriorities();
 
@@ -29,7 +29,6 @@ namespace CPW212TicketingSystem
                 BtnAddOrUpdate.Text = "Add";
                 DtpCreated.Value = DateTime.Today;
                 TxtTicketCreator.Text = State.CurrUser.ToString();
-                BtnDelete.Enabled = false;
                 BtnViewComments.Enabled = false;
                 CbxCompleted.Enabled = false;
             }
@@ -70,7 +69,6 @@ namespace CPW212TicketingSystem
                 TicketDB.AddOrUpdate(Ticket);
                 this.Close();
             }
-            
         }
 
         private void PopulateTicket()
@@ -110,19 +108,9 @@ namespace CPW212TicketingSystem
             return true;
         }
 
-        private void BtnDelete_Click(object sender, EventArgs e)
+        private void DtpDueDate_ValueChanged(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Are you sure you would like to delete this ticket?", "Confirm Deletion", MessageBoxButtons.YesNo);
-            if (result == DialogResult.Yes)
-            {
-                TicketDB.Delete(Ticket);
-                this.Close();
-            }
-        }
-
-        private void btnGoBack_Click(object sender, EventArgs e)
-        {
-            this.Hide();
+            DtpDueDate.Enabled = false;
         }
     }
 }

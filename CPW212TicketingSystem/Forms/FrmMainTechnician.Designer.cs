@@ -40,15 +40,19 @@
             this.BtnEditRoles = new System.Windows.Forms.Button();
             this.BtnEditPriorities = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblSearch = new System.Windows.Forms.Label();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BtnCreateTicket
             // 
+            this.BtnCreateTicket.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnCreateTicket.FlatAppearance.BorderSize = 0;
             this.BtnCreateTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCreateTicket.Font = new System.Drawing.Font("Comic Sans MS", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCreateTicket.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.BtnCreateTicket.Location = new System.Drawing.Point(647, 370);
+            this.BtnCreateTicket.Location = new System.Drawing.Point(738, 459);
             this.BtnCreateTicket.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.BtnCreateTicket.Name = "BtnCreateTicket";
             this.BtnCreateTicket.Size = new System.Drawing.Size(306, 186);
@@ -61,7 +65,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.Orange;
-            this.label3.Location = new System.Drawing.Point(71, 511);
+            this.label3.Location = new System.Drawing.Point(112, 576);
             this.label3.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(85, 25);
@@ -72,7 +76,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.Orange;
-            this.label2.Location = new System.Drawing.Point(71, 453);
+            this.label2.Location = new System.Drawing.Point(112, 518);
             this.label2.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(108, 25);
@@ -83,7 +87,7 @@
             // 
             this.CboPriorities.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CboPriorities.FormattingEnabled = true;
-            this.CboPriorities.Location = new System.Drawing.Point(195, 506);
+            this.CboPriorities.Location = new System.Drawing.Point(236, 571);
             this.CboPriorities.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.CboPriorities.Name = "CboPriorities";
             this.CboPriorities.Size = new System.Drawing.Size(396, 33);
@@ -91,7 +95,7 @@
             // 
             // DtpDueDate
             // 
-            this.DtpDueDate.Location = new System.Drawing.Point(195, 450);
+            this.DtpDueDate.Location = new System.Drawing.Point(236, 515);
             this.DtpDueDate.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.DtpDueDate.Name = "DtpDueDate";
             this.DtpDueDate.Size = new System.Drawing.Size(396, 31);
@@ -99,7 +103,7 @@
             // 
             // TxtTitle
             // 
-            this.TxtTitle.Location = new System.Drawing.Point(195, 394);
+            this.TxtTitle.Location = new System.Drawing.Point(236, 459);
             this.TxtTitle.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.TxtTitle.Name = "TxtTitle";
             this.TxtTitle.Size = new System.Drawing.Size(396, 31);
@@ -109,7 +113,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Orange;
-            this.label1.Location = new System.Drawing.Point(71, 397);
+            this.label1.Location = new System.Drawing.Point(112, 462);
             this.label1.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 25);
@@ -118,11 +122,11 @@
             // 
             // LstTickets
             // 
-            this.LstTickets.BackColor = System.Drawing.Color.White;
+            this.LstTickets.BackColor = System.Drawing.Color.Gainsboro;
             this.LstTickets.ForeColor = System.Drawing.SystemColors.MenuText;
             this.LstTickets.FormattingEnabled = true;
             this.LstTickets.ItemHeight = 25;
-            this.LstTickets.Location = new System.Drawing.Point(24, 92);
+            this.LstTickets.Location = new System.Drawing.Point(84, 146);
             this.LstTickets.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.LstTickets.Name = "LstTickets";
             this.LstTickets.Size = new System.Drawing.Size(912, 254);
@@ -137,7 +141,7 @@
             this.BtnEditUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnEditUsers.Font = new System.Drawing.Font("Comic Sans MS", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnEditUsers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.BtnEditUsers.Location = new System.Drawing.Point(13, 568);
+            this.BtnEditUsers.Location = new System.Drawing.Point(2, 657);
             this.BtnEditUsers.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.BtnEditUsers.Name = "BtnEditUsers";
             this.BtnEditUsers.Size = new System.Drawing.Size(270, 168);
@@ -153,7 +157,7 @@
             this.BtnEditRoles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnEditRoles.Font = new System.Drawing.Font("Comic Sans MS", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnEditRoles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.BtnEditRoles.Location = new System.Drawing.Point(286, 568);
+            this.BtnEditRoles.Location = new System.Drawing.Point(286, 657);
             this.BtnEditRoles.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.BtnEditRoles.Name = "BtnEditRoles";
             this.BtnEditRoles.Size = new System.Drawing.Size(271, 168);
@@ -169,7 +173,7 @@
             this.BtnEditPriorities.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnEditPriorities.Font = new System.Drawing.Font("Comic Sans MS", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnEditPriorities.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.BtnEditPriorities.Location = new System.Drawing.Point(560, 568);
+            this.BtnEditPriorities.Location = new System.Drawing.Point(560, 657);
             this.BtnEditPriorities.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.BtnEditPriorities.Name = "BtnEditPriorities";
             this.BtnEditPriorities.Size = new System.Drawing.Size(273, 168);
@@ -180,7 +184,11 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(843, 657);
+            this.button1.Cursor = System.Windows.Forms.Cursors.No;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.Red;
+            this.button1.Location = new System.Drawing.Point(911, 705);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(104, 79);
             this.button1.TabIndex = 19;
@@ -188,12 +196,50 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(212, 36);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(583, 47);
+            this.textBox1.TabIndex = 20;
+            // 
+            // lblSearch
+            // 
+            this.lblSearch.AutoSize = true;
+            this.lblSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearch.ForeColor = System.Drawing.Color.Orange;
+            this.lblSearch.Location = new System.Drawing.Point(70, 46);
+            this.lblSearch.Name = "lblSearch";
+            this.lblSearch.Size = new System.Drawing.Size(127, 37);
+            this.lblSearch.TabIndex = 21;
+            this.lblSearch.Text = "Search:";
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("Comic Sans MS", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnSearch.Location = new System.Drawing.Point(801, 13);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(271, 115);
+            this.btnSearch.TabIndex = 22;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
             // FrmMainTechnician
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(52)))));
-            this.ClientSize = new System.Drawing.Size(958, 752);
+            this.ClientSize = new System.Drawing.Size(1084, 835);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.lblSearch);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.BtnEditPriorities);
             this.Controls.Add(this.BtnEditRoles);
@@ -231,5 +277,8 @@
         private System.Windows.Forms.Button BtnEditRoles;
         private System.Windows.Forms.Button BtnEditPriorities;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label lblSearch;
+        private System.Windows.Forms.Button btnSearch;
     }
 }

@@ -22,6 +22,7 @@ namespace CPW212TicketingSystem.Forms
         {
             LoadPriorities();
             LoadTickets();
+            this.Refresh();
         }
 
         protected virtual void LoadTickets()
@@ -41,13 +42,15 @@ namespace CPW212TicketingSystem.Forms
             if (IsValid())
             {
                 string title = TxtTitle.Text;
-                DateTime? due = (DtpDueDate.Checked) ? (DateTime?)DtpDueDate.Value : null;
+                DateTime? due = (DateTime?)DtpDueDate.Value;
                 Priority priority = (Priority)CboPriorities.SelectedItem;
 
                 Ticket newTicket = new Ticket(title, due, priority);
-
                 TicketDB.Create(newTicket); 
-            }
+
+                FrmAddComment newComment = new FrmAddComment(newTicket);
+                newComment.ShowDialog();
+            } 
 
             LoadTickets();
         }
@@ -74,7 +77,7 @@ namespace CPW212TicketingSystem.Forms
             if (LstTickets.SelectedIndex >= 0)
             {
                 Ticket t = (Ticket)LstTickets.SelectedItem;
-                FrmTicket ticketDetails = new FrmTicket(t);
+                FrmNonAdminTicket ticketDetails = new FrmNonAdminTicket(t);
                 ticketDetails.ShowDialog();
             }
         }

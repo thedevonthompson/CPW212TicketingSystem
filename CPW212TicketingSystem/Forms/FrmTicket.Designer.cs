@@ -48,11 +48,13 @@
             this.LblCreated = new System.Windows.Forms.Label();
             this.BtnAddOrUpdate = new System.Windows.Forms.Button();
             this.CboPriority = new System.Windows.Forms.ComboBox();
+            this.btnGoBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LblTicketID
             // 
             this.LblTicketID.AutoSize = true;
+            this.LblTicketID.ForeColor = System.Drawing.Color.Orange;
             this.LblTicketID.Location = new System.Drawing.Point(36, 96);
             this.LblTicketID.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.LblTicketID.Name = "LblTicketID";
@@ -63,6 +65,7 @@
             // LblTitle
             // 
             this.LblTitle.AutoSize = true;
+            this.LblTitle.ForeColor = System.Drawing.Color.Orange;
             this.LblTitle.Location = new System.Drawing.Point(84, 148);
             this.LblTitle.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.LblTitle.Name = "LblTitle";
@@ -73,6 +76,7 @@
             // LblCompleted
             // 
             this.LblCompleted.AutoSize = true;
+            this.LblCompleted.ForeColor = System.Drawing.Color.Orange;
             this.LblCompleted.Location = new System.Drawing.Point(24, 242);
             this.LblCompleted.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.LblCompleted.Name = "LblCompleted";
@@ -83,6 +87,7 @@
             // LblLastUpdated
             // 
             this.LblLastUpdated.AutoSize = true;
+            this.LblLastUpdated.ForeColor = System.Drawing.Color.Orange;
             this.LblLastUpdated.Location = new System.Drawing.Point(486, 198);
             this.LblLastUpdated.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.LblLastUpdated.Name = "LblLastUpdated";
@@ -93,7 +98,8 @@
             // LblDueDate
             // 
             this.LblDueDate.AutoSize = true;
-            this.LblDueDate.Location = new System.Drawing.Point(522, 252);
+            this.LblDueDate.ForeColor = System.Drawing.Color.Orange;
+            this.LblDueDate.Location = new System.Drawing.Point(524, 244);
             this.LblDueDate.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.LblDueDate.Name = "LblDueDate";
             this.LblDueDate.Size = new System.Drawing.Size(108, 25);
@@ -103,6 +109,7 @@
             // LblUserName
             // 
             this.LblUserName.AutoSize = true;
+            this.LblUserName.ForeColor = System.Drawing.Color.Orange;
             this.LblUserName.Location = new System.Drawing.Point(480, 96);
             this.LblUserName.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.LblUserName.Name = "LblUserName";
@@ -113,6 +120,7 @@
             // LblPriority
             // 
             this.LblPriority.AutoSize = true;
+            this.LblPriority.ForeColor = System.Drawing.Color.Orange;
             this.LblPriority.Location = new System.Drawing.Point(62, 198);
             this.LblPriority.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.LblPriority.Name = "LblPriority";
@@ -122,10 +130,15 @@
             // 
             // BtnViewComments
             // 
-            this.BtnViewComments.Location = new System.Drawing.Point(466, 296);
-            this.BtnViewComments.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.BtnViewComments.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnViewComments.FlatAppearance.BorderSize = 0;
+            this.BtnViewComments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnViewComments.Font = new System.Drawing.Font("Comic Sans MS", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnViewComments.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.BtnViewComments.Location = new System.Drawing.Point(425, 296);
+            this.BtnViewComments.Margin = new System.Windows.Forms.Padding(6);
             this.BtnViewComments.Name = "BtnViewComments";
-            this.BtnViewComments.Size = new System.Drawing.Size(180, 58);
+            this.BtnViewComments.Size = new System.Drawing.Size(209, 123);
             this.BtnViewComments.TabIndex = 7;
             this.BtnViewComments.Text = "View Comments";
             this.BtnViewComments.UseVisualStyleBackColor = true;
@@ -135,7 +148,7 @@
             // 
             this.TxtTicketID.Enabled = false;
             this.TxtTicketID.Location = new System.Drawing.Point(156, 92);
-            this.TxtTicketID.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.TxtTicketID.Margin = new System.Windows.Forms.Padding(6);
             this.TxtTicketID.Name = "TxtTicketID";
             this.TxtTicketID.Size = new System.Drawing.Size(196, 31);
             this.TxtTicketID.TabIndex = 8;
@@ -143,7 +156,7 @@
             // TxtTitle
             // 
             this.TxtTitle.Location = new System.Drawing.Point(156, 142);
-            this.TxtTitle.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.TxtTitle.Margin = new System.Windows.Forms.Padding(6);
             this.TxtTitle.Name = "TxtTitle";
             this.TxtTitle.Size = new System.Drawing.Size(312, 31);
             this.TxtTitle.TabIndex = 9;
@@ -152,7 +165,7 @@
             // 
             this.DtpLastUpdated.Enabled = false;
             this.DtpLastUpdated.Location = new System.Drawing.Point(646, 190);
-            this.DtpLastUpdated.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.DtpLastUpdated.Margin = new System.Windows.Forms.Padding(6);
             this.DtpLastUpdated.Name = "DtpLastUpdated";
             this.DtpLastUpdated.Size = new System.Drawing.Size(396, 31);
             this.DtpLastUpdated.TabIndex = 11;
@@ -161,7 +174,7 @@
             // 
             this.DtpDueDate.CustomFormat = "";
             this.DtpDueDate.Location = new System.Drawing.Point(646, 240);
-            this.DtpDueDate.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.DtpDueDate.Margin = new System.Windows.Forms.Padding(6);
             this.DtpDueDate.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
             this.DtpDueDate.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.DtpDueDate.Name = "DtpDueDate";
@@ -172,7 +185,7 @@
             // 
             this.TxtTicketCreator.Enabled = false;
             this.TxtTicketCreator.Location = new System.Drawing.Point(646, 90);
-            this.TxtTicketCreator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.TxtTicketCreator.Margin = new System.Windows.Forms.Padding(6);
             this.TxtTicketCreator.Name = "TxtTicketCreator";
             this.TxtTicketCreator.Size = new System.Drawing.Size(262, 31);
             this.TxtTicketCreator.TabIndex = 13;
@@ -181,7 +194,7 @@
             // 
             this.CbxCompleted.AutoSize = true;
             this.CbxCompleted.Location = new System.Drawing.Point(156, 242);
-            this.CbxCompleted.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.CbxCompleted.Margin = new System.Windows.Forms.Padding(6);
             this.CbxCompleted.Name = "CbxCompleted";
             this.CbxCompleted.Size = new System.Drawing.Size(28, 27);
             this.CbxCompleted.TabIndex = 14;
@@ -191,6 +204,7 @@
             // 
             this.LblHeader.AutoSize = true;
             this.LblHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblHeader.ForeColor = System.Drawing.Color.Orange;
             this.LblHeader.Location = new System.Drawing.Point(416, 29);
             this.LblHeader.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.LblHeader.Name = "LblHeader";
@@ -200,10 +214,15 @@
             // 
             // BtnDelete
             // 
+            this.BtnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnDelete.FlatAppearance.BorderSize = 0;
+            this.BtnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnDelete.Font = new System.Drawing.Font("Comic Sans MS", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.BtnDelete.Location = new System.Drawing.Point(866, 296);
-            this.BtnDelete.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.BtnDelete.Margin = new System.Windows.Forms.Padding(6);
             this.BtnDelete.Name = "BtnDelete";
-            this.BtnDelete.Size = new System.Drawing.Size(180, 58);
+            this.BtnDelete.Size = new System.Drawing.Size(195, 123);
             this.BtnDelete.TabIndex = 17;
             this.BtnDelete.Text = "Delete Ticket";
             this.BtnDelete.UseVisualStyleBackColor = true;
@@ -213,7 +232,7 @@
             // 
             this.DtpCreated.Enabled = false;
             this.DtpCreated.Location = new System.Drawing.Point(646, 140);
-            this.DtpCreated.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.DtpCreated.Margin = new System.Windows.Forms.Padding(6);
             this.DtpCreated.Name = "DtpCreated";
             this.DtpCreated.Size = new System.Drawing.Size(396, 31);
             this.DtpCreated.TabIndex = 19;
@@ -221,6 +240,7 @@
             // LblCreated
             // 
             this.LblCreated.AutoSize = true;
+            this.LblCreated.ForeColor = System.Drawing.Color.Orange;
             this.LblCreated.Location = new System.Drawing.Point(540, 148);
             this.LblCreated.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.LblCreated.Name = "LblCreated";
@@ -230,10 +250,15 @@
             // 
             // BtnAddOrUpdate
             // 
-            this.BtnAddOrUpdate.Location = new System.Drawing.Point(666, 296);
-            this.BtnAddOrUpdate.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.BtnAddOrUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnAddOrUpdate.FlatAppearance.BorderSize = 0;
+            this.BtnAddOrUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAddOrUpdate.Font = new System.Drawing.Font("Comic Sans MS", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAddOrUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.BtnAddOrUpdate.Location = new System.Drawing.Point(646, 296);
+            this.BtnAddOrUpdate.Margin = new System.Windows.Forms.Padding(6);
             this.BtnAddOrUpdate.Name = "BtnAddOrUpdate";
-            this.BtnAddOrUpdate.Size = new System.Drawing.Size(180, 58);
+            this.BtnAddOrUpdate.Size = new System.Drawing.Size(208, 123);
             this.BtnAddOrUpdate.TabIndex = 20;
             this.BtnAddOrUpdate.Text = "Add Or Update";
             this.BtnAddOrUpdate.UseVisualStyleBackColor = true;
@@ -244,16 +269,33 @@
             this.CboPriority.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CboPriority.FormattingEnabled = true;
             this.CboPriority.Location = new System.Drawing.Point(156, 192);
-            this.CboPriority.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.CboPriority.Margin = new System.Windows.Forms.Padding(6);
             this.CboPriority.Name = "CboPriority";
             this.CboPriority.Size = new System.Drawing.Size(238, 33);
             this.CboPriority.TabIndex = 21;
+            // 
+            // btnGoBack
+            // 
+            this.btnGoBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGoBack.FlatAppearance.BorderSize = 0;
+            this.btnGoBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGoBack.Font = new System.Drawing.Font("Comic Sans MS", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGoBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnGoBack.Location = new System.Drawing.Point(935, 29);
+            this.btnGoBack.Name = "btnGoBack";
+            this.btnGoBack.Size = new System.Drawing.Size(126, 67);
+            this.btnGoBack.TabIndex = 22;
+            this.btnGoBack.Text = "Go Back";
+            this.btnGoBack.UseVisualStyleBackColor = true;
+            this.btnGoBack.Click += new System.EventHandler(this.btnGoBack_Click);
             // 
             // FrmTicket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1068, 377);
+            this.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.ClientSize = new System.Drawing.Size(1089, 434);
+            this.Controls.Add(this.btnGoBack);
             this.Controls.Add(this.CboPriority);
             this.Controls.Add(this.BtnAddOrUpdate);
             this.Controls.Add(this.DtpCreated);
@@ -274,8 +316,10 @@
             this.Controls.Add(this.LblCompleted);
             this.Controls.Add(this.LblTitle);
             this.Controls.Add(this.LblTicketID);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "FrmTicket";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
             this.Load += new System.EventHandler(this.FrmTicket_Load);
             this.ResumeLayout(false);
@@ -305,5 +349,6 @@
         private System.Windows.Forms.Label LblCreated;
         private System.Windows.Forms.Button BtnAddOrUpdate;
         private System.Windows.Forms.ComboBox CboPriority;
+        private System.Windows.Forms.Button btnGoBack;
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -110,6 +111,18 @@ namespace CPW212TicketingSystem.Forms
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            LstTickets.SelectedItems.Clear();
+            for (int i = LstTickets.Items.Count - 1; i >= 0; i--)
+            {
+                if (LstTickets.Items[i].ToString().Contains(textBox1.Text))
+                {
+                    LstTickets.SetSelected(i, true);
+                }
+            }
         }
     }
 }
