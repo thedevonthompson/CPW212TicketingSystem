@@ -107,10 +107,10 @@
     <Compile Include="Forms\FrmAddComment.Designer.cs">
       <DependentUpon>FrmAddComment.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmPriorities.cs">
+    <Compile Include="Forms\FrmPriorities.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmPriorities.Designer.cs">
+    <Compile Include="Forms\FrmPriorities.Designer.cs">
       <DependentUpon>FrmPriorities.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201803070133479_fixeduserscomments.cs" />
@@ -151,7 +151,7 @@
     <EmbeddedResource Include="Forms\FrmTicket.resx">
       <DependentUpon>FrmTicket.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmPriorities.resx">
+    <EmbeddedResource Include="Forms\FrmPriorities.resx">
       <DependentUpon>FrmPriorities.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803070133479_fixeduserscomments.resx">
