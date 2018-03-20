@@ -78,7 +78,7 @@ namespace CPW212TicketingSystem
 
         public override string ToString()
         {
-            return $"{Created.ToShortDateString()}  -  {Title}  -  Completed: {IsCompleted}";
+            return $"{Created.ToShortDateString()}  -  {Title} - Priority: {Priority} -  Completed: {IsCompleted}";
         }
     }
 }

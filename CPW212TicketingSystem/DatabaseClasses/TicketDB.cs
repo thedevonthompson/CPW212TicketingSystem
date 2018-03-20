@@ -79,7 +79,6 @@ namespace CPW212TicketingSystem
             db.Entry(t).State = EntityState.Deleted;
             db.SaveChanges();
         }
-
         #endregion
     }
 }
